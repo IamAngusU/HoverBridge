@@ -1,6 +1,6 @@
 # Tested behavior · 0.2.0-alpha.3
 
-Local Windows verification, 13 October 2026. These results describe this source snapshot and the listed browsers. The [workflow badge](https://github.com/IamAngusU/HoverBridge/actions/workflows/ci.yml) reports hosted CI separately; neither is a cross-device certification.
+Local Windows verification, 13 October 2026. These results describe this source snapshot and the listed browsers. The [CI mirror's workflow badge](https://github.com/angusu-de/HoverBridge-CI/actions/workflows/ci.yml) reports hosted CI separately; compare commit SHAs before relating it to this source repository. Neither is a cross-device certification.
 
 | Check | Result |
 | --- | --- |
@@ -16,7 +16,7 @@ Local Windows verification, 13 October 2026. These results describe this source 
 
 The browser suite exercises diagonal crossings, four panel directions, deliberate sibling clicks, leave and rest timing, keyboard and Escape, touch emulation, pen hover events, nested and portaled panels, native popovers, Shadow DOM, dynamic bindings, teardown, the read-only guard, and live/per-scope tuning. The same 61 checks pass in each Playwright engine. Empty `pointerType` is accepted as an unclassified hovering pointer, as allowed by the [Pointer Events specification](https://www.w3.org/TR/pointerevents2/); touch and pen contact still do not activate hover intent.
 
-[Full engine-matrix log](evidence/browser-matrix-alpha3.log) · [Chrome log](evidence/chrome-alpha3.log) · [Edge log](evidence/edge-alpha3.log)
+[Unit log](evidence/unit-alpha3.log) · [Full engine-matrix log](evidence/browser-matrix-alpha3.log) · [Chrome log](evidence/chrome-alpha3.log) · [Edge log](evidence/edge-alpha3.log)
 
 ## Run the checks
 

@@ -3,7 +3,7 @@
 ## 0.2.0-alpha.3
 
 - Published a versioned, self-hostable GitHub prerelease with a browser script, standalone playground, npm archive, source ZIP and SHA-256 manifest.
-- Added copy-ready installation guidance, a pinned and read-only CI workflow, and a live workflow status badge.
+- Added copy-ready installation guidance, a pinned and read-only CI workflow, and a live badge from a public commit-matched CI mirror while Actions on IamAngusU are blocked by account billing.
 - Added `npm run metrics` for reproducible bundle-size and DOM-free core measurements, with run artifacts in CI.
 - Added repeatable release bundling and smoke checks for both the source demo and exported single-file playground.
 

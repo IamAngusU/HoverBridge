@@ -8,7 +8,7 @@
   <img src="docs/assets/badge-dependencies.svg" height="36" alt="Keine Laufzeit-Abhängigkeiten">
   <a href="https://github.com/IamAngusU/HoverBridge/releases/tag/v0.2.0-alpha.3"><img src="docs/assets/badge-alpha.svg" height="36" alt="Release 0.2.0-alpha.3"></a>
   <a href="LICENSE"><img src="docs/assets/badge-license.svg" height="36" alt="MIT"></a>
-  <a href="https://github.com/IamAngusU/HoverBridge/actions/workflows/ci.yml"><img src="https://github.com/IamAngusU/HoverBridge/actions/workflows/ci.yml/badge.svg?branch=main&amp;event=push" height="36" alt="Live-Status der GitHub-CI"></a>
+  <a href="https://github.com/angusu-de/HoverBridge-CI/actions/workflows/ci.yml"><img src="https://github.com/angusu-de/HoverBridge-CI/actions/workflows/ci.yml/badge.svg?branch=main&amp;event=push" height="36" alt="Live-Status des CI-Spiegels"></a>
 </p>
 <p align="center"><a href="#einmal-einbinden">Start</a> · <a href="#ausprobieren">Playground</a> · <a href="docs/api.md">API</a> · <a href="docs/testing.md">Messwerte</a> · <a href="README.md">English</a></p>
 
@@ -122,6 +122,8 @@ guard.destroy();
 `bridge.metrics` enthält Zähler für Pointer-Samples, geschützte Samples, zurückgestellte Wechsel, Öffnen, Schließen und Layout-Lesevorgänge. `bridge.resetMetrics()` beginnt einen neuen Beobachtungszeitraum. Die Bibliothek sendet und speichert keine Telemetrie. Ein zurückgestellter Wechsel beweist keinen Bedienfehler. [Genaue Bedeutung der Zähler](docs/api.md#metrics).
 
 Für Maintainer schreibt `npm run metrics` Bundle-Größe und einen Microbenchmark des DOM-freien Kerns nach `docs/evidence/`. Die CI lädt diese Dateien pro Linux-Lauf als Artefakt hoch. Browser-Layout und Rendering sind in diesen Zeiten nicht enthalten. [Messbereich](docs/testing.md#size-and-core-benchmark).
+
+**Gehostete CI:** Der öffentliche [CI-Spiegel](https://github.com/angusu-de/HoverBridge-CI) prüft denselben Commit unter Windows, Linux und macOS. Auf dem IamAngusU-Account startet GitHub die Jobs derzeit wegen einer Abrechnungssperre nicht. Das Badge zeigt `main` des Spiegels; bei neuen Commits muss dessen SHA mit `main` dieses Repositories verglichen werden. [Workflow und Herkunft](docs/deployment.md#ci-and-evidence).
 
 ## Verhalten
 

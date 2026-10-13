@@ -8,7 +8,7 @@
   <a href="docs/architecture.md"><img src="docs/assets/badge-dependencies.svg" height="36" alt="Zero runtime dependencies"></a>
   <a href="https://github.com/IamAngusU/HoverBridge/releases/tag/v0.2.0-alpha.3"><img src="docs/assets/badge-alpha.svg" height="36" alt="0.2.0-alpha.3 release"></a>
   <a href="LICENSE"><img src="docs/assets/badge-license.svg" height="36" alt="MIT licensed"></a>
-  <a href="https://github.com/IamAngusU/HoverBridge/actions/workflows/ci.yml"><img src="https://github.com/IamAngusU/HoverBridge/actions/workflows/ci.yml/badge.svg?branch=main&amp;event=push" height="36" alt="Live GitHub CI status"></a>
+  <a href="https://github.com/angusu-de/HoverBridge-CI/actions/workflows/ci.yml"><img src="https://github.com/angusu-de/HoverBridge-CI/actions/workflows/ci.yml/badge.svg?branch=main&amp;event=push" height="36" alt="Live CI mirror status"></a>
 </p>
 <p align="center"><a href="#paste-once">Start</a> · <a href="#try-it">Playground</a> · <a href="docs/api.md">API</a> · <a href="docs/testing.md">Measured behavior</a> · <a href="README.de.md">Deutsch</a></p>
 
@@ -124,6 +124,8 @@ guard.destroy();
 `bridge.metrics` exposes in-memory counters for pointer samples, protected samples, deferred sibling switches, opens, closes and layout reads. `bridge.resetMetrics()` starts a fresh observation window. No telemetry is sent or stored. A deferred switch is a decision made by the controller, not proof that a user would have made a mistake. [Exact counter meanings](docs/api.md#metrics).
 
 For maintainers, `npm run metrics` records bundle size and a DOM-free core microbenchmark in `docs/evidence/`. CI uploads those files for each Linux run. These timings exclude browser layout and rendering. [Measurement scope](docs/testing.md#size-and-core-benchmark).
+
+**Hosted CI:** The public [CI mirror](https://github.com/angusu-de/HoverBridge-CI) runs the same commit on Windows, Linux and macOS. GitHub currently prevents jobs from starting on the IamAngusU account because of an account billing lock. The badge reports the mirror's `main` branch; compare its commit SHA with this repository's `main` before treating it as proof for a newer commit. [Workflow and provenance](docs/deployment.md#ci-and-evidence).
 
 ## What it handles
 

@@ -65,4 +65,4 @@ await writeFile(resolve(out, 'release-manifest.json'), JSON.stringify(manifest, 
 const all = [...files, `${script}.sha256`, 'release-manifest.json'];
 const lines = await Promise.all(all.map(async name => `${(await digest(resolve(out, name))).sha256}  ${name}`));
 await writeFile(resolve(out, 'SHA256SUMS.txt'), lines.join('\n') + '\n');
-console.log(`Release bundle: ${out}\nCommit: ${commit}\nAssets: ${all.length}`);
+console.log(`Release bundle: ${out}\nCommit: ${commit}\nChecksummed assets: ${all.length}; checksum index: SHA256SUMS.txt`);
