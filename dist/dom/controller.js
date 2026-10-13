@@ -248,8 +248,12 @@ export class HoverBridgeController {
         if (this.suppressed && !path.includes(this.suppressed))
             this.suppressed = null;
         if (!this._item && (!candidate || !allowOpen)) {
-            this.cancelTimer();
-            this.pending = null;
+            // A resize/scroll sample cannot open a menu, but it must not erase an
+            // already scheduled opening while the pointer still hits that trigger.
+            if (!candidate || candidate.trigger !== this.pending?.trigger) {
+                this.cancelTimer();
+                this.pending = null;
+            }
             return;
         }
         if (pointerSample)

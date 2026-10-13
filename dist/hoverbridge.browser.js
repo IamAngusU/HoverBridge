@@ -613,8 +613,10 @@ class HoverBridgeController {
         if (this.suppressed && !path.includes(this.suppressed))
             this.suppressed = null;
         if (!this._item && (!candidate || !allowOpen)) {
-            this.cancelTimer();
-            this.pending = null;
+            if (!candidate || candidate.trigger !== this.pending?.trigger) {
+                this.cancelTimer();
+                this.pending = null;
+            }
             return;
         }
         if (pointerSample)

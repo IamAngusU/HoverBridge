@@ -40,9 +40,9 @@ Node.js 24.5.0, npm 11.5.1 and Playwright Core 1.57.0 were used for this run. Th
 
 ## Size and core benchmark
 
-The self-contained browser script is **61,847 bytes raw, 12,673 bytes gzip, 10,883 bytes Brotli**. Separately compressed DOM-free core modules total **9,188 bytes raw, 2,971 bytes gzip**. These are gzip level 9 and Brotli quality 11 results; actual transfer depends on server compression. [Machine-readable size report](evidence/sizes.json).
+The self-contained browser script is **61,946 bytes raw, 12,692 bytes gzip, 10,901 bytes Brotli**. Separately compressed DOM-free core modules total **9,188 bytes raw, 2,971 bytes gzip**. These are gzip level 9 and Brotli quality 11 results; actual transfer depends on server compression. [Machine-readable size report](evidence/sizes.json).
 
-On this Windows machine (Node 24.5.0, Intel Core i9-12900K), the median of 11 batches of 100,000 calls was **1.19 µs** per `safeCorridor` sample and **0.84 µs** per synthetic `IntentTracker` path sample. These microbenchmarks include core allocations but exclude browser events, styling, layout and rendering. They are not end-to-end latency, FPS, a guaranteed threshold, or a comparison to another library. Shared-host results can vary. [Machine-readable benchmark and methodology](evidence/benchmark.json).
+On this Windows machine (Node 24.5.0, Intel Core i9-12900K), the median of 11 batches of 100,000 calls was **0.98 µs** per `safeCorridor` sample and **0.70 µs** per synthetic `IntentTracker` path sample. These microbenchmarks include core allocations but exclude browser events, styling, layout and rendering. They are not end-to-end latency, FPS, a guaranteed threshold, or a comparison to another library. Shared-host results can vary. [Machine-readable benchmark and methodology](evidence/benchmark.json).
 
 ## Demo evidence
 

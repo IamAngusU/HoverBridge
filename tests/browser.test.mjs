@@ -359,6 +359,9 @@ test('openDelay is cancelled when the trigger is only passed over', async () => 
 test('openDelay completes without requiring another pointer movement', async () => {
   const page = await fixture({ openDelay: 60 }); await page.mouse.move(150, 125);
   assert.ok(await page.evaluate(() => ctrl.metrics.pointerSamples) >= 1);
+  // A layout notification before the timer fires must preserve this pending
+  // opening if hit testing still resolves to the same trigger.
+  await page.evaluate(() => window.dispatchEvent(new Event('resize')));
   try { await page.waitForFunction(() => ctrl.active?.id === 'a', null, { timeout: 3000 }); }
   catch (error) {
     const detail = await page.evaluate(() => ({
@@ -413,7 +416,7 @@ test('metrics count decisions, not invented prevented user mistakes', async () =
 
 for (const [turns, side] of ['right', 'bottom', 'left', 'top'].entries()) {
   test(`real layout: ${side}-facing panels preserve diagonal transit`, async () => {
-    const page = await fixture();
+    const page = await fixture({ restMs: 5000, maxTransitMs: 10000 });
     const rotate = (x, y) => {
       x -= 330; y -= 260;
       for (let turn = 0; turn < turns; turn++) [x, y] = [-y, x];

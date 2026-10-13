@@ -1,13 +1,13 @@
 {
   "version": "0.2.0-alpha.3",
-  "measuredAt": "2026-10-13T12:44:00.997Z",
+  "measuredAt": "2026-10-13T13:13:14.147Z",
   "bundle": {
     "file": "dist/hoverbridge.browser.js",
-    "bytes": 61847,
-    "gzipBytes": 12673,
-    "brotliBytes": 10883,
-    "sha256": "12ee91059ad71c4affd5afe616608a49f755309643bb2881916c9ace338a57b6",
-    "integrity": "sha384-fU1ZkeDCUtMmKhds8LWE0TF9T+bNMz9Op3nKMPwHg6NyYE2CRTsAC1SIGN6Mj5+4"
+    "bytes": 61946,
+    "gzipBytes": 12692,
+    "brotliBytes": 10901,
+    "sha256": "4aafe5feb726523270f47c917318bc25dc1831bc398df83ebd432a037461c6f7",
+    "integrity": "sha384-oyyiY4P/TPKLhw1wGmAD/YIqg/pi7vlQmHrRx4WpmlFN2nWBlMRbxNPeYuPwBvF8"
   },
   "core": [
     {

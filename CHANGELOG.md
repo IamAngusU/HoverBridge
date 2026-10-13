@@ -6,6 +6,7 @@
 - Added copy-ready installation guidance, a pinned and read-only CI workflow, and a live badge from a public commit-matched CI mirror while Actions on IamAngusU are blocked by account billing.
 - Added `npm run metrics` for reproducible bundle-size and DOM-free core measurements, with run artifacts in CI.
 - Added repeatable release bundling and smoke checks for both the source demo and exported single-file playground.
+- Preserved a pending hover opening across a layout notification when the pointer still hits the same trigger; added a browser regression check.
 
 This release remains an alpha and is not published to the npm registry.
 

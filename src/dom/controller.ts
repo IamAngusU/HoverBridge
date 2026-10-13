@@ -234,7 +234,15 @@ export class HoverBridgeController implements HoverBridgeHandle {
     const candidate = this._candidate(path);
     // Leaving a dismissed trigger rearms it, even when no item is active.
     if (this.suppressed && !path.includes(this.suppressed)) this.suppressed = null;
-    if (!this._item && (!candidate || !allowOpen)) { this.cancelTimer(); this.pending = null; return; }
+    if (!this._item && (!candidate || !allowOpen)) {
+      // A resize/scroll sample cannot open a menu, but it must not erase an
+      // already scheduled opening while the pointer still hits that trigger.
+      if (!candidate || candidate.trigger !== this.pending?.trigger) {
+        this.cancelTimer();
+        this.pending = null;
+      }
+      return;
+    }
     if (pointerSample) this.counters.pointerSamples++;
     if (candidate?.trigger === this.suppressed) return;
     if (!this._item) { if (candidate && allowOpen) this.wantOpen(candidate, time); return; }
