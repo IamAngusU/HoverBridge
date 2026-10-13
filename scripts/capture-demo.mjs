@@ -1,0 +1,67 @@
+import { chromium } from 'playwright-core';
+import { fileURLToPath } from 'node:url';
+import { createPreviewServer } from './serve.mjs';
+import { resolve, dirname } from 'node:path';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const out = resolve(root, 'docs/assets');
+await mkdir(out, {recursive:true});
+const browser = await chromium.launch({headless:true, ...(process.env.PLAYWRIGHT_EXECUTABLE_PATH ? {executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH}:{}), args:['--no-sandbox']});
+const server=createPreviewServer();
+await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+const origin=`http://127.0.0.1:${server.address().port}`;
+try {
+ const page = await browser.newPage({viewport:{width:1440,height:1170},deviceScaleFactor:1,colorScheme:'light'});
+ page.setDefaultTimeout(3000);
+ const errors=[],requests=[];
+ page.on('pageerror', error=>errors.push(error.message));
+ page.on('request',request=>{if(/^https?:/.test(request.url()) && !request.url().startsWith(origin+'/'))requests.push(request.url());});
+ if(process.env.HOVERBRIDGE_CAPTURE_MODE==='fixture') {
+   const html=await readFile(resolve(root,'demo/index.html'),'utf8');
+   await page.setContent(html.replace(/<link[^>]+rel="stylesheet"[^>]*>/g,'').replace(/<script[^>]*>[\s\S]*?<\/script>/g,''));
+   await page.addStyleTag({path:resolve(root,'demo/demo.css')});
+   await page.addScriptTag({path:resolve(root,'dist/hoverbridge.browser.js')});
+   await page.addScriptTag({path:resolve(root,'demo/demo.js')});
+ } else await page.goto(origin+'/demo/');
+ await page.waitForFunction(()=>!!window.hoverBridgeDemo);
+ await page.locator('#buffer').evaluate(input=>{input.value='14';input.dispatchEvent(new Event('input',{bubbles:true}));});
+ assert.equal(await page.locator('#buffer-value').textContent(),'14 px');
+ await page.locator('#buffer').evaluate(input=>{input.value='6';input.dispatchEvent(new Event('input',{bubbles:true}));});
+ await page.click('#debug');
+ const box=await page.locator('#components-trigger').boundingBox();
+ await page.mouse.move(box.x+70,box.y+box.height/2);
+ await page.mouse.move(box.x+115,box.y+box.height-6);
+ await page.mouse.move(box.x+148,box.y+box.height+12);
+ const states=await page.evaluate(()=>hoverBridgeDemo.controllers.map(c=>({...c.state,active:c.active?.id,panel:c.state.panel?.id})));
+ assert.equal(states.find(s=>s.active==='components-trigger')?.guarding,true);
+ await page.evaluate(()=>hoverBridgeDemo.refreshCounters());
+ await page.screenshot({path:resolve(out,'playground-light.png'),fullPage:true});
+ await page.emulateMedia({colorScheme:'dark'});
+ await page.mouse.move(box.x+115,box.y+box.height-6);
+ await page.mouse.move(box.x+148,box.y+box.height+12);
+ await page.evaluate(()=>hoverBridgeDemo.refreshCounters());
+ await page.screenshot({path:resolve(out,'playground-dark.png'),fullPage:true});
+ await page.emulateMedia({colorScheme:'light'});
+ for(const side of ['right','left','bottom','top']) {
+   await page.selectOption('#side',side);
+   await page.locator('#components-trigger').hover();
+   assert.equal(await page.locator('#components').isVisible(),true);
+   const stage=await page.locator('#stage').boundingBox(), panel=await page.locator('#components').boundingBox();
+   assert.ok(panel.y>=stage.y,`${side} upper bound`);
+   assert.ok(panel.y+panel.height<=stage.y+stage.height,`${side} lower bound`);
+ }
+ await page.selectOption('#side','right');
+ await page.locator('#components-trigger').hover();
+ await page.locator('#layout-trigger').hover();
+ assert.equal(await page.locator('#layouts').isVisible(),true);
+ await page.locator('#layouts').hover();
+ assert.equal(await page.locator('#components').isVisible(),true);
+ await page.click('#protection');
+ assert.equal(await page.locator('#protection').getAttribute('aria-pressed'),'false');
+ await page.click('#reset');
+ assert.deepEqual(errors,[]);
+ assert.deepEqual(requests,[],'demo should be self-contained');
+ await writeFile(resolve(root,'docs/demo-check.json'),JSON.stringify({browser:await browser.version(),loadMode:process.env.HOVERBRIDGE_CAPTURE_MODE==='fixture'?'about:blank fixture loading original HTML, CSS and scripts':'loopback HTTP',note:process.env.HOVERBRIDGE_CAPTURE_MODE==='fixture'?'The unmodified local CSS and scripts ran in a browser fixture. Direct navigation was not verified in this mode.':'Demo served by the included preview server.',assertions:'tolerance slider; corridor visible; dark/light screenshots; all four placements; nested portal; protection toggle; reset; no script errors; zero HTTP(S) requests',externalRequests:requests,errors},null,2)+'\n');
+ console.log('Demo check passed. Screenshots captured from the running demo; load mode is recorded in docs/demo-check.json.');
+} finally {await browser.close();await new Promise(resolve=>server.close(resolve));}

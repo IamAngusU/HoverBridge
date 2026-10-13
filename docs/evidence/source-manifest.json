@@ -1,0 +1,33 @@
+{
+  "version": "0.1.0-alpha.1",
+  "algorithm": "sha256",
+  "files": {
+    "demo/demo.css": "0b4afa537e7682d7a1f80eb77ee0812f386a169551f84be8ca6da68785e8c5cb",
+    "demo/demo.js": "b558dc9d9c844712c5161f824070b2ac066befe58b7bbefdb5382d3f75888fd6",
+    "demo/index.html": "aafbeb897acc7d4478e8f519e1a7aa4932ce2f6607491eed7f3741c53f26d5a9",
+    "package.json": "e473625f2e7f6ce07bbecba7d4f81765fec3fc4a5091e81b37ab0a74268f4127",
+    "scripts/bench.mjs": "dd7f70fd21632b79367e7ab10c42e3fb45920ad8908c6af5e71fd997b3facee1",
+    "scripts/build.mjs": "f688c479125d81057fe0eabd55e938d6e29784502b9acf40a7c6ca35888e6e13",
+    "scripts/capture-demo.mjs": "c5d7370fbe44f9fce69fb4cb3b102dbd19828f90a3a3eb9ccbfc26bd7413abf4",
+    "scripts/export-demo.mjs": "b303f873698afadb00af1a2c1ba6b1cfbcfccb2d012d10ae3975e075def78ff3",
+    "scripts/serve.mjs": "a8146151a27f0899b20509ea5b79db2a2a0e1ace2953be4b9a87bf7aebca1a5b",
+    "scripts/size.mjs": "23900bc5c4b673b0ee51ed2b7895c4063da889f9f570f8e1ddcec479372f184d",
+    "src/auto.ts": "bc263da0154a695ddafbda230c7cef61a33680fb9ec12a612ca83d14b6da30d2",
+    "src/browser.ts": "80628d5a3b2dfa74d706fa608676dc6bb25dc05f29762af3929f2fe0b954b018",
+    "src/core/geometry.ts": "7f8e5af3367c2a675c3e54ef4ea5bab704f4bf12e7b1367710cb0fdff88792da",
+    "src/core/index.ts": "122037f56576089464b54a10197ed7e857883cb666feefeaaea0d99d053b1796",
+    "src/core/intent.ts": "d9e078e844bf9be2ae7c02e07a796e2c4db392c32df4161b918df1d619ce7f52",
+    "src/dom/auto.ts": "2ac0a31e804df0d5775cc556fae0c904a47c42e535c2fb714415cf2f7097bce0",
+    "src/dom/controller.ts": "e48b0cbb371253f1eece7f4b9ffbcc53f67bd958c9554b9cb42d5d1b66615c71",
+    "src/dom/debug.ts": "bb4ffeddb06eaba0bcbcd3dacf2023a544fbc79749735515f1ad5c9a890af159",
+    "src/dom/hub.ts": "00111ce659eb086aae33173d94125c96c5a7d98d745e71f317239deb460d4fe0",
+    "src/dom/types.ts": "7bdc89848a18480b2377373a14e32d900444a7f815ebde1476045a3d0116bded",
+    "src/dom/util.ts": "5367d3df46e8d5010319801d4fcd8107e0072144ac182a90539492834f2db33c",
+    "src/index.ts": "2fa4d534b007321ac786c7bc6ebcc1aface71d1a2e698f29ed976b8d250816dd",
+    "tests/browser.test.mjs": "28506fd34a9bdabf57f66ac69716993292ad8c2a3c25c90a1c0191bf564eeac5",
+    "tests/core.test.mjs": "62bd5299011f5a5001c89c8c722da1d51a93645ee66c5f5aa77dc0fdbbc89d71",
+    "tests/package.test.mjs": "32ff7d2026a00bfd177104b267378034d03c63cb12a7939e3774e2faea4ec0d8",
+    "tests/server.test.mjs": "c3956de2596de46d42b2524a5255cbefc300b168ea56c4a04b8e81511c124e8f",
+    "tsconfig.json": "757dabe1fa64ca90860aa0a7efeffc34a98558f37b655b628dd1be3cc8cb8ec4"
+  }
+}

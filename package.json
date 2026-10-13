@@ -1,0 +1,85 @@
+{
+  "name": "@iamangusu/hoverbridge",
+  "version": "0.2.0-alpha.3",
+  "description": "Keep the menu you meant to reach. Framework-independent pointer intent and safe hover corridors.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Angus Uelsmann (https://angusu.de)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IamAngusU/HoverBridge.git"
+  },
+  "homepage": "https://github.com/IamAngusU/HoverBridge#readme",
+  "bugs": "https://github.com/IamAngusU/HoverBridge/issues",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js"
+    },
+    "./guard": {
+      "types": "./dist/guard.d.ts",
+      "import": "./dist/guard.js"
+    },
+    "./auto": {
+      "types": "./dist/auto.d.ts",
+      "import": "./dist/auto.js"
+    },
+    "./browser": "./dist/hoverbridge.browser.js",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "./dist/auto.js",
+    "./dist/hoverbridge.browser.js"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "demo",
+    "docs",
+    "scripts/serve.mjs",
+    "*.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/core.test.mjs tests/package.test.mjs tests/server.test.mjs",
+    "test:browser": "node --test tests/browser.test.mjs",
+    "test:browsers": "node scripts/test-browsers.mjs",
+    "browsers:install": "node node_modules/playwright-core/cli.js install chromium firefox webkit",
+    "check": "npm run build && npm test && npm run test:browsers",
+    "demo": "node scripts/serve.mjs",
+    "bench": "node scripts/bench.mjs",
+    "size": "node scripts/size.mjs",
+    "metrics": "npm run build && npm run size && npm run bench",
+    "release:bundle": "node scripts/release-assets.mjs",
+    "prepack": "npm run build && npm test",
+    "demo:capture": "node scripts/capture-demo.mjs",
+    "demo:export": "node scripts/export-demo.mjs",
+    "demo:smoke": "node scripts/smoke-demo.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3",
+    "playwright-core": "1.57.0"
+  },
+  "keywords": [
+    "safe-triangle",
+    "safe-polygon",
+    "hover",
+    "pointer-intent",
+    "menu-aim",
+    "popover",
+    "typescript",
+    "zero-dependency"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

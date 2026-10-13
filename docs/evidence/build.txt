@@ -1,0 +1,5 @@
+
+> @iamangusu/hoverbridge@0.1.0-alpha.1 build
+> node scripts/build.mjs
+
+Built HoverBridge 0.1.0-alpha.1: ESM, declarations and one self-contained browser script.

@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0-alpha.1",
+  "result": "pass",
+  "installation": "npm install --offline --ignore-scripts --no-audit --no-fund <local archive> into a separate consumer folder",
+  "checks": [
+    "strict TypeScript consumer imports and types",
+    "Node main/core/auto SSR imports",
+    "basic actual IntentTracker operation",
+    "installed browser script SHA-256 equals the measured and browser-tested script"
+  ],
+  "scope": "Local archive installation, not an npm registry publication or clean network dependency install."
+}

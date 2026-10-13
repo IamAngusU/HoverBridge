@@ -1,0 +1,8 @@
+{
+  "browser": "143.0.7499.4",
+  "loadMode": "loopback HTTP",
+  "note": "Demo served by the included preview server.",
+  "assertions": "tolerance slider; corridor visible; dark/light screenshots; all four placements; nested portal; protection toggle; reset; no script errors; zero HTTP(S) requests",
+  "externalRequests": [],
+  "errors": []
+}

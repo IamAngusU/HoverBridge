@@ -1,0 +1,15 @@
+node_modules/
+*.tgz
+*.zip
+.DS_Store
+Thumbs.db
+playwright-report/
+test-results/
+*.log
+!docs/evidence/*.log
+.env
+.env.*
+!.env.example
+hoverbridge-playground-*.html
+release/
+work-npm-cache/

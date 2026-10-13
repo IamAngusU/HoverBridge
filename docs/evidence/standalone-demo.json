@@ -1,0 +1,7 @@
+{
+  "version": "0.1.0-alpha.1",
+  "browser": "144.0.7559.96",
+  "loadMode": "original exported HTML passed to browser setContent; direct navigation restricted by administrator policy",
+  "assertions": "two controllers initialized; component opens; protection/debug toggles; no external script/CSS references; no page errors",
+  "errors": []
+}

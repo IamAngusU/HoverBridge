@@ -1,0 +1,333 @@
+
+> @iamangusu/hoverbridge@0.1.0-alpha.1 test:browser
+> node --test tests/browser.test.mjs
+
+TAP version 13
+# Browser evidence: chromium 144.0.7559.96
+# Subtest: diagonal transit crosses a real sibling and a real empty gap
+ok 1 - diagonal transit crosses a real sibling and a real empty gap
+  ---
+  duration_ms: 389.086933
+  type: 'test'
+  ...
+# Subtest: vertical sibling selection is immediate, not a universal hover delay
+ok 2 - vertical sibling selection is immediate, not a universal hover delay
+  ---
+  duration_ms: 124.384373
+  type: 'test'
+  ...
+# Subtest: resting deliberately over a crossed sibling eventually selects it
+ok 3 - resting deliberately over a crossed sibling eventually selects it
+  ---
+  duration_ms: 252.061432
+  type: 'test'
+  ...
+# Subtest: leaving the corridor closes after closeDelay
+ok 4 - leaving the corridor closes after closeDelay
+  ---
+  duration_ms: 245.015392
+  type: 'test'
+  ...
+# Subtest: a target can stay hovered longer than the entire transit budget
+ok 5 - a target can stay hovered longer than the entire transit budget
+  ---
+  duration_ms: 273.700915
+  type: 'test'
+  ...
+# Subtest: clicking a protected sibling uses the real trusted click
+ok 6 - clicking a protected sibling uses the real trusted click
+  ---
+  duration_ms: 153.088168
+  type: 'test'
+  ...
+# Subtest: a second click unpins and closes without leaving stale markers
+ok 7 - a second click unpins and closes without leaving stale markers
+  ---
+  duration_ms: 169.133192
+  type: 'test'
+  ...
+# Subtest: outside clicks dismiss pinned content without swallowing the click
+ok 8 - outside clicks dismiss pinned content without swallowing the click
+  ---
+  duration_ms: 162.434982
+  type: 'test'
+  ...
+# Subtest: keyboard focus keeps a panel open even when the pointer leaves
+ok 9 - keyboard focus keeps a panel open even when the pointer leaves
+  ---
+  duration_ms: 272.755457
+  type: 'test'
+  ...
+# Subtest: Escape closes focused content and does not reopen on focus restoration
+ok 10 - Escape closes focused content and does not reopen on focus restoration
+  ---
+  duration_ms: 154.887711
+  type: 'test'
+  ...
+# Subtest: Tab remains native and reaches content without a focus trap
+ok 11 - Tab remains native and reaches content without a focus trap
+  ---
+  duration_ms: 116.981089
+  type: 'test'
+  ...
+# Subtest: disabled triggers do not open
+ok 12 - disabled triggers do not open
+  ---
+  duration_ms: 100.483434
+  type: 'test'
+  ...
+# Subtest: disabling the active trigger closes it
+ok 13 - disabling the active trigger closes it
+  ---
+  duration_ms: 104.129007
+  type: 'test'
+  ...
+# Subtest: added and removed items are discovered without reinitializing
+ok 14 - added and removed items are discovered without reinitializing
+  ---
+  duration_ms: 116.695943
+  type: 'test'
+  ...
+# Subtest: detached scopes dispose observers, state, markers and timers
+ok 15 - detached scopes dispose observers, state, markers and timers
+  ---
+  duration_ms: 163.140437
+  type: 'test'
+  ...
+# Subtest: destroy restores preexisting DOM attributes
+ok 16 - destroy restores preexisting DOM attributes
+  ---
+  duration_ms: 119.595077
+  type: 'test'
+  ...
+# Subtest: destroy does not overwrite later host-owned attribute changes
+ok 17 - destroy does not overwrite later host-owned attribute changes
+  ---
+  duration_ms: 133.934585
+  type: 'test'
+  ...
+# Subtest: AbortSignal cancels an installed scope
+ok 18 - AbortSignal cancels an installed scope
+  ---
+  duration_ms: 102.229794
+  type: 'test'
+  ...
+# Subtest: an already aborted signal does not leave a working controller behind
+ok 19 - an already aborted signal does not leave a working controller behind
+  ---
+  duration_ms: 108.043875
+  type: 'test'
+  ...
+# Subtest: repeated initialization is idempotent
+ok 20 - repeated initialization is idempotent
+  ---
+  duration_ms: 101.848304
+  type: 'test'
+  ...
+# Subtest: automatic discovery finds newly inserted scopes
+ok 21 - automatic discovery finds newly inserted scopes
+  ---
+  duration_ms: 151.916007
+  type: 'test'
+  ...
+# Subtest: unannotated third-party controls are not commandeered by auto mode
+ok 22 - unannotated third-party controls are not commandeered by auto mode
+  ---
+  duration_ms: 123.80564
+  type: 'test'
+  ...
+# Subtest: missing or multi-target ARIA relationships are reported, not guessed
+ok 23 - missing or multi-target ARIA relationships are reported, not guessed
+  ---
+  duration_ms: 96.574506
+  type: 'test'
+  ...
+# Subtest: render callbacks replace visibility writes for controlled components
+ok 24 - render callbacks replace visibility writes for controlled components
+  ---
+  duration_ms: 178.141562
+  type: 'test'
+  ...
+# Subtest: nested portal panels keep their ancestor open
+ok 25 - nested portal panels keep their ancestor open
+  ---
+  duration_ms: 325.477431
+  type: 'test'
+  ...
+# Subtest: Escape closes nested layers from deepest to shallowest
+ok 26 - Escape closes nested layers from deepest to shallowest
+  ---
+  duration_ms: 107.139208
+  type: 'test'
+  ...
+# Subtest: native popover hover and click do not double-toggle
+ok 27 - native popover hover and click do not double-toggle
+  ---
+  duration_ms: 217.275483
+  type: 'test'
+  ...
+# Subtest: an external native popover dismissal synchronizes active state
+ok 28 - an external native popover dismissal synchronizes active state
+  ---
+  duration_ms: 153.242033
+  type: 'test'
+  ...
+# Subtest: touch pointer motion does not activate mouse intent
+ok 29 - touch pointer motion does not activate mouse intent
+  ---
+  duration_ms: 103.750693
+  type: 'test'
+  ...
+# Subtest: touch activation works on the first tap
+ok 30 - touch activation works on the first tap
+  ---
+  duration_ms: 240.625795
+  type: 'test'
+  ...
+# Subtest: pen hover is accepted, pen contact is not treated as hover
+ok 31 - pen hover is accepted, pen contact is not treated as hover
+  ---
+  duration_ms: 101.848705
+  type: 'test'
+  ...
+# Subtest: dragging across another trigger does not open it
+ok 32 - dragging across another trigger does not open it
+  ---
+  duration_ms: 116.748016
+  type: 'test'
+  ...
+# Subtest: a pointer cancellation clears a pending corridor
+ok 33 - a pointer cancellation clears a pending corridor
+  ---
+  duration_ms: 166.10691
+  type: 'test'
+  ...
+# Subtest: scroll and resize update actual geometry rather than a cached placement
+ok 34 - scroll and resize update actual geometry rather than a cached placement
+  ---
+  duration_ms: 134.682634
+  type: 'test'
+  ...
+# Subtest: protection can be disabled without turning off normal hover behavior
+ok 35 - protection can be disabled without turning off normal hover behavior
+  ---
+  duration_ms: 147.682594
+  type: 'test'
+  ...
+# Subtest: disabled controllers ignore input until re-enabled
+ok 36 - disabled controllers ignore input until re-enabled
+  ---
+  duration_ms: 120.005094
+  type: 'test'
+  ...
+# Subtest: openDelay is cancelled when the trigger is only passed over
+ok 37 - openDelay is cancelled when the trigger is only passed over
+  ---
+  duration_ms: 269.201962
+  type: 'test'
+  ...
+# Subtest: openDelay completes without requiring another pointer movement
+ok 38 - openDelay completes without requiring another pointer movement
+  ---
+  duration_ms: 159.64191
+  type: 'test'
+  ...
+# Subtest: closed, idle scopes perform zero layout reads
+ok 39 - closed, idle scopes perform zero layout reads
+  ---
+  duration_ms: 133.317583
+  type: 'test'
+  ...
+# Subtest: debug drawing is pointer-transparent and leaves ordinary hit testing intact
+ok 40 - debug drawing is pointer-transparent and leaves ordinary hit testing intact
+  ---
+  duration_ms: 151.749467
+  type: 'test'
+  ...
+# Subtest: open Shadow DOM can be explicitly registered without global constructor assumptions
+ok 41 - open Shadow DOM can be explicitly registered without global constructor assumptions
+  ---
+  duration_ms: 153.854151
+  type: 'test'
+  ...
+# Subtest: same-document portal target replacement refreshes the relationship
+ok 42 - same-document portal target replacement refreshes the relationship
+  ---
+  duration_ms: 190.193988
+  type: 'test'
+  ...
+# Subtest: metrics count decisions, not invented prevented user mistakes
+ok 43 - metrics count decisions, not invented prevented user mistakes
+  ---
+  duration_ms: 141.821793
+  type: 'test'
+  ...
+# Subtest: real layout: right-facing panels preserve diagonal transit
+ok 44 - real layout: right-facing panels preserve diagonal transit
+  ---
+  duration_ms: 195.007391
+  type: 'test'
+  ...
+# Subtest: real layout: bottom-facing panels preserve diagonal transit
+ok 45 - real layout: bottom-facing panels preserve diagonal transit
+  ---
+  duration_ms: 183.459768
+  type: 'test'
+  ...
+# Subtest: real layout: left-facing panels preserve diagonal transit
+ok 46 - real layout: left-facing panels preserve diagonal transit
+  ---
+  duration_ms: 186.046795
+  type: 'test'
+  ...
+# Subtest: real layout: top-facing panels preserve diagonal transit
+ok 47 - real layout: top-facing panels preserve diagonal transit
+  ---
+  duration_ms: 200.764688
+  type: 'test'
+  ...
+# Subtest: external hidden state closes the controller instead of leaving stale ARIA
+ok 48 - external hidden state closes the controller instead of leaving stale ARIA
+  ---
+  duration_ms: 146.85707
+  type: 'test'
+  ...
+# Subtest: callbacks may dispose the controller while an old item is closing
+ok 49 - callbacks may dispose the controller while an old item is closing
+  ---
+  duration_ms: 130.105246
+  type: 'test'
+  ...
+# Subtest: destroy reports inactive, unpinned and unguarded state
+ok 50 - destroy reports inactive, unpinned and unguarded state
+  ---
+  duration_ms: 128.329367
+  type: 'test'
+  ...
+# Subtest: scroll gestures remain native while an intent corridor is active
+ok 51 - scroll gestures remain native while an intent corridor is active
+  ---
+  duration_ms: 175.625738
+  type: 'test'
+  ...
+# Subtest: a deliberate click on a leaf releases a previously pinned panel
+ok 52 - a deliberate click on a leaf releases a previously pinned panel
+  ---
+  duration_ms: 176.114669
+  type: 'test'
+  ...
+# Subtest: keyboard focus can rearm a dismissed trigger after leaving it
+ok 53 - keyboard focus can rearm a dismissed trigger after leaving it
+  ---
+  duration_ms: 108.517562
+  type: 'test'
+  ...
+1..53
+# tests 53
+# suites 0
+# pass 53
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8991.589695

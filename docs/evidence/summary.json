@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0-alpha.1",
+  "recordedAt": "2026-10-12T22:39:59.928340+00:00",
+  "tests": {
+    "node": 65,
+    "chromium": 53,
+    "total": 118,
+    "failed": 0,
+    "seededGeometryCases": 20000,
+    "note": "The 20,000 generated cases are inside one test, not 20,000 additional test runner cases."
+  },
+  "environment": {
+    "node": "v22.16.0",
+    "typescript": "5.8.3",
+    "playwrightCore": "1.57.0-beta-1764944708000",
+    "chromium": "144.0.7559.96",
+    "platform": "Linux x64"
+  },
+  "browserScriptSha256": "eeb658e4a5f2ec6a7e5097bee0a99cfd80fc10cf2110cbccb0b8774e5fe58149",
+  "runtimeDependencies": 0,
+  "hostedCI": false,
+  "githubCreated": false,
+  "npmPublished": false,
+  "scopeNotes": [
+    "Browser tests run actual Chromium pointer/click/keyboard input on browser fixtures. Pen signals are synthetic. Touch is browser emulation, not physical hardware.",
+    "Direct browser navigation to file and loopback URLs is blocked by the environment. Original demo assets and standalone exported HTML were exercised as browser fixtures.",
+    "No clean registry install, Firefox/WebKit run, physical-device test or accessibility certification is claimed."
+  ]
+}

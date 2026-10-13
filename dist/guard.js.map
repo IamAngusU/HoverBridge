@@ -1,0 +1,1 @@
+{"version":3,"file":"guard.js","sourceRoot":"","sources":["../src/guard.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,sBAAsB,EAAE,MAAM,gBAAgB,CAAC","sourcesContent":["export { createHoverBridgeGuard } from './dom/guard.js';\nexport type { HoverBridgeGuardHandle, HoverBridgeGuardOptions, HoverBridgeGuardState } from './dom/types.js';\n"]}

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 560" role="img" aria-labelledby="title description">
+  <title id="title">HoverBridge: pointer intent across a menu</title>
+  <desc id="description">A pointer travels diagonally from Components across Typography to its panel. The corridor keeps Components active. A trace contrasts the element under the pointer with the active selection.</desc>
+  <defs>
+    <clipPath id="plot"><rect x="25" y="86" width="790" height="401"/></clipPath>
+    <linearGradient id="trace"><stop stop-color="#482475"/><stop offset=".34" stop-color="#355f8d"/><stop offset=".67" stop-color="#20a387"/><stop offset="1" stop-color="#fde725"/></linearGradient>
+    <style>
+      .mono{font:11px Consolas,'Liberation Mono',monospace;letter-spacing:1.4px}
+      .tiny{font:10px Consolas,'Liberation Mono',monospace;letter-spacing:1.1px}
+      .label{font:600 16px Arial,Helvetica,sans-serif}
+      .title{font:600 27px Arial,Helvetica,sans-serif;letter-spacing:-.5px}
+      .body{font:14px Arial,Helvetica,sans-serif}
+      .ink{fill:#17212c}.muted{fill:#6e7376}.light{fill:#e6edf2}.dim{fill:#90a2ae}
+    </style>
+  </defs>
+  <rect width="1280" height="560" fill="#f4f3ef"/>
+  <path d="M24 76H1256M24 511H1256" stroke="#c8cac7"/>
+  <rect x="25" y="22" width="28" height="22" fill="#20a387"/>
+  <text x="39" y="37" text-anchor="middle" class="tiny" fill="#0e1b20">01</text>
+  <text x="67" y="39" class="mono muted">HOVERBRIDGE / INTERACTION STUDY</text>
+  <text x="25" y="68" class="title ink">A diagonal crossing keeps its destination</text>
+  <text x="1256" y="39" text-anchor="end" class="mono muted">POINTER → CORRIDOR → PANEL</text>
+  <rect x="25" y="86" width="790" height="401" fill="#111e2c" stroke="#728296"/>
+  <g clip-path="url(#plot)" fill="none">
+    <g stroke="#2c4354" stroke-width="1">
+      <path d="M105 86V487M185 86V487M265 86V487M345 86V487M425 86V487M505 86V487M585 86V487M665 86V487M745 86V487"/>
+      <path d="M25 126H815M25 166H815M25 206H815M25 246H815M25 286H815M25 326H815M25 366H815M25 406H815M25 446H815"/>
+    </g>
+    <g stroke="#354759" stroke-width="1">
+      <circle cx="659" cy="266" r="92"/><circle cx="659" cy="266" r="182"/><circle cx="659" cy="266" r="272"/>
+      <path d="M659 86V487M25 266H815"/>
+    </g>
+  </g>
+  <text x="45" y="111" class="mono light">01 / POINTER TRACE</text>
+  <text x="795" y="111" text-anchor="end" class="tiny dim">ILLUSTRATIVE PATH · CSS PX</text>
+  <rect x="95" y="178" width="260" height="48" fill="#1d3646" stroke="#72d4c5" stroke-width="1.5"/>
+  <rect x="95" y="226" width="260" height="48" fill="#172937" stroke="#4e6674"/>
+  <rect x="95" y="274" width="260" height="48" fill="#172937" stroke="#4e6674"/>
+  <rect x="101" y="184" width="3" height="36" fill="#20a387"/>
+  <text x="118" y="207" class="label light">Components</text>
+  <text x="118" y="255" class="body dim">Typography</text>
+  <text x="118" y="303" class="body dim">Motion</text>
+  <text x="95" y="342" class="tiny dim">SOURCE / ACTIVE ITEM</text>
+  <path d="M220 178L589 151L589 368L220 226Z" fill="#20a387" fill-opacity=".10" stroke="#65c9b8" stroke-opacity=".75" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="413" y="192" class="tiny" fill="#79d6c5">SAFE CORRIDOR</text>
+  <rect x="589" y="151" width="174" height="217" fill="#182c3a" stroke="#728a96"/>
+  <rect x="589" y="151" width="174" height="39" fill="#223b49"/>
+  <text x="607" y="176" class="label light">Components</text>
+  <path d="M607 218H745M607 253H745M607 288H725M607 323H735" stroke="#49606b" stroke-width="12"/>
+  <text x="676" y="390" text-anchor="middle" class="tiny dim">DESTINATION / PANEL</text>
+  <path d="M219 202C277 205 310 235 357 250S456 281 513 282S566 264 630 266" fill="none" stroke="#c9d7dc" stroke-width="1.5" stroke-dasharray="4 6" opacity=".65"/>
+  <circle cx="219" cy="202" r="6" fill="#482475" stroke="#e6edf2"/>
+  <circle cx="277" cy="216" r="4.5" fill="#414487" stroke="#e6edf2"/>
+  <circle cx="319" cy="239" r="4.5" fill="#355f8d" stroke="#e6edf2"/>
+  <circle cx="360" cy="252" r="4.5" fill="#2a788e" stroke="#e6edf2"/>
+  <circle cx="405" cy="269" r="4.5" fill="#21918c" stroke="#e6edf2"/>
+  <circle cx="453" cy="280" r="4.5" fill="#20a387" stroke="#e6edf2"/>
+  <circle cx="508" cy="282" r="4.5" fill="#5ec962" stroke="#e6edf2"/>
+  <circle cx="560" cy="272" r="4.5" fill="#aadc32" stroke="#e6edf2"/>
+  <circle cx="630" cy="266" r="6" fill="#fde725" stroke="#e6edf2"/>
+  <path d="M360 257V322H489" fill="none" stroke="#fde725" stroke-width="1"/>
+  <text x="496" y="326" class="tiny" fill="#fde725">CROSSES TYPOGRAPHY</text>
+  <text x="43" y="462" class="tiny dim">X / POINTER POSITION</text>
+  <text x="793" y="462" text-anchor="end" class="tiny dim">PROGRESS →</text>
+  <rect x="839" y="86" width="417" height="401" fill="#f8f8f5" stroke="#c8cac7"/>
+  <rect x="839" y="86" width="417" height="33" fill="#ecece7"/>
+  <text x="858" y="108" class="mono ink">02 / STATE TRACE</text>
+  <text x="1239" y="108" text-anchor="end" class="tiny muted">TIME →</text>
+  <text x="858" y="146" class="tiny muted">PHYSICALLY UNDER THE POINTER</text>
+  <path d="M858 160H1239M858 242H1239M858 324H1239M858 426H1239" stroke="#d4d6d2"/>
+  <g class="tiny muted" text-anchor="middle"><text x="884" y="181">START</text><text x="1046" y="181">CROSS</text><text x="1204" y="181">ARRIVE</text></g>
+  <path d="M877 197H1217" stroke="#c5c9c7" stroke-width="2"/>
+  <path d="M877 197H955" stroke="#482475" stroke-width="6"/>
+  <path d="M955 197H1127" stroke="#fde725" stroke-width="6"/>
+  <path d="M1127 197H1217" stroke="#20a387" stroke-width="6"/>
+  <g class="tiny ink" text-anchor="middle"><text x="916" y="222">COMPONENTS</text><text x="1041" y="222">TYPOGRAPHY</text><text x="1172" y="222">PANEL</text></g>
+  <text x="858" y="270" class="tiny muted">ACTIVE SELECTION</text>
+  <path d="M877 298H1217" stroke="#20a387" stroke-width="6"/>
+  <circle cx="877" cy="298" r="5" fill="#20a387"/><circle cx="1217" cy="298" r="5" fill="#20a387"/>
+  <text x="1047" y="316" text-anchor="middle" class="tiny ink">COMPONENTS STAYS OPEN</text>
+  <rect x="858" y="344" width="6" height="61" fill="#20a387"/>
+  <text x="875" y="361" class="body ink">Cross another row.</text>
+  <text x="875" y="384" class="body ink">Reach the intended panel.</text>
+  <text x="875" y="407" class="body ink">Clicking another item still switches.</text>
+  <text x="858" y="459" class="tiny muted">NO OVERLAY / CLICKS REMAIN REAL</text>
+  <text x="25" y="539" class="tiny muted">SCHEMATIC / NOT A BENCHMARK</text>
+  <rect x="390" y="527" width="245" height="9" fill="url(#trace)"/>
+  <text x="377" y="536" text-anchor="end" class="tiny muted">EARLY</text>
+  <text x="648" y="536" class="tiny muted">LATE</text>
+  <text x="1256" y="539" text-anchor="end" class="tiny muted">HOVERBRIDGE / 0.2</text>
+</svg>

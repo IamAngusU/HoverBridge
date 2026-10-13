@@ -1,0 +1,62 @@
+
+> @iamangusu/hoverbridge@0.1.0-alpha.1 bench
+> node scripts/bench.mjs
+
+{
+  "version": "0.1.0-alpha.1",
+  "measuredAt": "2026-10-12T22:37:31.280Z",
+  "node": "v22.16.0",
+  "platform": "linux",
+  "arch": "x64",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "measurements": [
+    {
+      "name": "safeCorridor: convex hull, one origin and one target",
+      "iterationsPerBatch": 100000,
+      "batches": 11,
+      "microsecondsPerSample": {
+        "median": 0.6450570500000004,
+        "min": 0.6197372200000001,
+        "max": 0.7251433399999999
+      },
+      "batchMicrosecondsPerSample": [
+        0.7018512699999999,
+        0.7251433399999999,
+        0.70868896,
+        0.6338595900000001,
+        0.6682251399999996,
+        0.6197372200000001,
+        0.6398022299999997,
+        0.6564912700000002,
+        0.6450570500000004,
+        0.6372877500000004,
+        0.6415463599999999
+      ]
+    },
+    {
+      "name": "IntentTracker: repeated source -> diagonal -> gap -> target path",
+      "iterationsPerBatch": 100000,
+      "batches": 11,
+      "microsecondsPerSample": {
+        "median": 0.5143248000000006,
+        "min": 0.5046480399999996,
+        "max": 0.5355321400000003
+      },
+      "batchMicrosecondsPerSample": [
+        0.5244088899999997,
+        0.5289023599999996,
+        0.5355321400000003,
+        0.5143248000000006,
+        0.5066120899999998,
+        0.5099530200000004,
+        0.5225277599999981,
+        0.5110939399999984,
+        0.5046480399999996,
+        0.5084880199999998,
+        0.5227939600000013
+      ]
+    }
+  ],
+  "checksum": 7280000,
+  "scope": "Local Node.js microbenchmark of the DOM-free core only. Mixed intent path is 50% endpoint samples and 50% corridor samples. Includes core allocations, excludes browser events, style, layout and rendering. Not an end-to-end latency or FPS claim. Shared-host timing is not a universal performance guarantee."
+}

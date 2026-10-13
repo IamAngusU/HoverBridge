@@ -1,0 +1,404 @@
+
+> @iamangusu/hoverbridge@0.1.0-alpha.1 test
+> node --test tests/core.test.mjs tests/package.test.mjs tests/server.test.mjs
+
+TAP version 13
+# Subtest: right: a diagonal crossing stays with the original panel
+ok 1 - right: a diagonal crossing stays with the original panel
+  ---
+  duration_ms: 2.374555
+  type: 'test'
+  ...
+# Subtest: right: moving straight into a sibling releases immediately
+ok 2 - right: moving straight into a sibling releases immediately
+  ---
+  duration_ms: 0.193592
+  type: 'test'
+  ...
+# Subtest: right: a return crossing works without a separate configuration
+ok 3 - right: a return crossing works without a separate configuration
+  ---
+  duration_ms: 0.276697
+  type: 'test'
+  ...
+# Subtest: right: floating-point edges belong to the corridor
+ok 4 - right: floating-point edges belong to the corridor
+  ---
+  duration_ms: 0.163676
+  type: 'test'
+  ...
+# Subtest: bottom: a diagonal crossing stays with the original panel
+ok 5 - bottom: a diagonal crossing stays with the original panel
+  ---
+  duration_ms: 0.148013
+  type: 'test'
+  ...
+# Subtest: bottom: moving straight into a sibling releases immediately
+ok 6 - bottom: moving straight into a sibling releases immediately
+  ---
+  duration_ms: 0.085118
+  type: 'test'
+  ...
+# Subtest: bottom: a return crossing works without a separate configuration
+ok 7 - bottom: a return crossing works without a separate configuration
+  ---
+  duration_ms: 0.1461
+  type: 'test'
+  ...
+# Subtest: bottom: floating-point edges belong to the corridor
+ok 8 - bottom: floating-point edges belong to the corridor
+  ---
+  duration_ms: 0.069704
+  type: 'test'
+  ...
+# Subtest: left: a diagonal crossing stays with the original panel
+ok 9 - left: a diagonal crossing stays with the original panel
+  ---
+  duration_ms: 0.322485
+  type: 'test'
+  ...
+# Subtest: left: moving straight into a sibling releases immediately
+ok 10 - left: moving straight into a sibling releases immediately
+  ---
+  duration_ms: 0.284458
+  type: 'test'
+  ...
+# Subtest: left: a return crossing works without a separate configuration
+ok 11 - left: a return crossing works without a separate configuration
+  ---
+  duration_ms: 0.17239
+  type: 'test'
+  ...
+# Subtest: left: floating-point edges belong to the corridor
+ok 12 - left: floating-point edges belong to the corridor
+  ---
+  duration_ms: 0.076606
+  type: 'test'
+  ...
+# Subtest: top: a diagonal crossing stays with the original panel
+ok 13 - top: a diagonal crossing stays with the original panel
+  ---
+  duration_ms: 0.682247
+  type: 'test'
+  ...
+# Subtest: top: moving straight into a sibling releases immediately
+ok 14 - top: moving straight into a sibling releases immediately
+  ---
+  duration_ms: 0.210927
+  type: 'test'
+  ...
+# Subtest: top: a return crossing works without a separate configuration
+ok 15 - top: a return crossing works without a separate configuration
+  ---
+  duration_ms: 0.088904
+  type: 'test'
+  ...
+# Subtest: top: floating-point edges belong to the corridor
+ok 16 - top: floating-point edges belong to the corridor
+  ---
+  duration_ms: 0.063025
+  type: 'test'
+  ...
+# Subtest: source and target never expire while actually hovered
+ok 17 - source and target never expire while actually hovered
+  ---
+  duration_ms: 0.137256
+  type: 'test'
+  ...
+# Subtest: a stationary corridor expires at restMs
+ok 18 - a stationary corridor expires at restMs
+  ---
+  duration_ms: 0.197387
+  type: 'test'
+  ...
+# Subtest: meaningful progress extends rest, but not the hard transit limit
+ok 19 - meaningful progress extends rest, but not the hard transit limit
+  ---
+  duration_ms: 0.154553
+  type: 'test'
+  ...
+# Subtest: small jitter is tolerated without renewing the progress clock
+ok 20 - small jitter is tolerated without renewing the progress clock
+  ---
+  duration_ms: 0.19933
+  type: 'test'
+  ...
+# Subtest: a deliberate retreat releases even while inside the polygon
+ok 21 - a deliberate retreat releases even while inside the polygon
+  ---
+  duration_ms: 0.110566
+  type: 'test'
+  ...
+# Subtest: source re-entry re-arms a released corridor
+ok 22 - source re-entry re-arms a released corridor
+  ---
+  duration_ms: 0.096104
+  type: 'test'
+  ...
+# Subtest: an unprimed tracker cannot invent pointer intent
+ok 23 - an unprimed tracker cannot invent pointer intent
+  ---
+  duration_ms: 0.060591
+  type: 'test'
+  ...
+# Subtest: reset discards all previous intent
+ok 24 - reset discards all previous intent
+  ---
+  duration_ms: 0.071889
+  type: 'test'
+  ...
+# Subtest: a layout change is not counted as a pointer retreat
+ok 25 - a layout change is not counted as a pointer retreat
+  ---
+  duration_ms: 0.143746
+  type: 'test'
+  ...
+# Subtest: a moved target recomputes the polygon rather than trusting the old one
+ok 26 - a moved target recomputes the polygon rather than trusting the old one
+  ---
+  duration_ms: 0.501065
+  type: 'test'
+  ...
+# Subtest: invalid point (NaN) releases and clears the tracker
+ok 27 - invalid point (NaN) releases and clears the tracker
+  ---
+  duration_ms: 0.090927
+  type: 'test'
+  ...
+# Subtest: invalid point (infinity) releases and clears the tracker
+ok 28 - invalid point (infinity) releases and clears the tracker
+  ---
+  duration_ms: 0.044917
+  type: 'test'
+  ...
+# Subtest: invalid point (negative infinity) releases and clears the tracker
+ok 29 - invalid point (negative infinity) releases and clears the tracker
+  ---
+  duration_ms: 0.036485
+  type: 'test'
+  ...
+# Subtest: invalid zero rectangle is never protected
+ok 30 - invalid zero rectangle is never protected
+  ---
+  duration_ms: 0.066279
+  type: 'test'
+  ...
+# Subtest: invalid inverted rectangle is never protected
+ok 31 - invalid inverted rectangle is never protected
+  ---
+  duration_ms: 0.048984
+  type: 'test'
+  ...
+# Subtest: invalid nan rectangle is never protected
+ok 32 - invalid nan rectangle is never protected
+  ---
+  duration_ms: 0.090346
+  type: 'test'
+  ...
+# Subtest: a backwards clock invalidates stale intent
+ok 33 - a backwards clock invalidates stale intent
+  ---
+  duration_ms: 0.095554
+  type: 'test'
+  ...
+# Subtest: reject invalid option buffer=-1
+ok 34 - reject invalid option buffer=-1
+  ---
+  duration_ms: 0.407003
+  type: 'test'
+  ...
+# Subtest: reject invalid option buffer=Infinity
+ok 35 - reject invalid option buffer=Infinity
+  ---
+  duration_ms: 0.07316
+  type: 'test'
+  ...
+# Subtest: reject invalid option buffer=129
+ok 36 - reject invalid option buffer=129
+  ---
+  duration_ms: 0.047812
+  type: 'test'
+  ...
+# Subtest: reject invalid option restMs=0
+ok 37 - reject invalid option restMs=0
+  ---
+  duration_ms: 0.053541
+  type: 'test'
+  ...
+# Subtest: reject invalid option restMs=NaN
+ok 38 - reject invalid option restMs=NaN
+  ---
+  duration_ms: 0.049074
+  type: 'test'
+  ...
+# Subtest: reject invalid option maxTransitMs=-1
+ok 39 - reject invalid option maxTransitMs=-1
+  ---
+  duration_ms: 0.048533
+  type: 'test'
+  ...
+# Subtest: reject invalid option retreatTolerance=257
+ok 40 - reject invalid option retreatTolerance=257
+  ---
+  duration_ms: 0.115504
+  type: 'test'
+  ...
+# Subtest: the deadline uses the caller clock, not Date.now()
+ok 41 - the deadline uses the caller clock, not Date.now()
+  ---
+  duration_ms: 0.112239
+  type: 'test'
+  ...
+# Subtest: rectangles include exact boundaries and subpixels
+ok 42 - rectangles include exact boundaries and subpixels
+  ---
+  duration_ms: 0.068142
+  type: 'test'
+  ...
+# Subtest: distance is zero inside, axis distance beside, Euclidean at a corner
+ok 43 - distance is zero inside, axis distance beside, Euclidean at a corner
+  ---
+  duration_ms: 0.060461
+  type: 'test'
+  ...
+# Subtest: hull removes repeated and collinear interior points
+ok 44 - hull removes repeated and collinear interior points
+  ---
+  duration_ms: 0.06644
+  type: 'test'
+  ...
+# Subtest: polygon membership supports both windings
+ok 45 - polygon membership supports both windings
+  ---
+  duration_ms: 0.168113
+  type: 'test'
+  ...
+# Subtest: empty, line and invalid polygons contain nothing
+ok 46 - empty, line and invalid polygons contain nothing
+  ---
+  duration_ms: 0.101323
+  type: 'test'
+  ...
+# Subtest: invalid corridor inputs return an empty polygon
+ok 47 - invalid corridor inputs return an empty polygon
+  ---
+  duration_ms: 0.731522
+  type: 'test'
+  ...
+# Subtest: placement reports the actual side for all four rotations
+ok 48 - placement reports the actual side for all four rotations
+  ---
+  duration_ms: 0.22557
+  type: 'test'
+  ...
+# Subtest: 20,000 seeded hull invariants: endpoints and every linear crossing stay inside
+ok 49 - 20,000 seeded hull invariants: endpoints and every linear crossing stay inside
+  ---
+  duration_ms: 60.896533
+  type: 'test'
+  ...
+# Subtest: progress after a missed rest deadline cannot revive a corridor
+ok 50 - progress after a missed rest deadline cannot revive a corridor
+  ---
+  duration_ms: 0.156706
+  type: 'test'
+  ...
+# Subtest: actual endpoint entry after a missed deadline still wins
+ok 51 - actual endpoint entry after a missed deadline still wins
+  ---
+  duration_ms: 0.087782
+  type: 'test'
+  ...
+# Subtest: the ESM main entry imports without window or document
+ok 52 - the ESM main entry imports without window or document
+  ---
+  duration_ms: 10.228931
+  type: 'test'
+  ...
+# Subtest: the auto entry is SSR-safe
+ok 53 - the auto entry is SSR-safe
+  ---
+  duration_ms: 2.626965
+  type: 'test'
+  ...
+# Subtest: the classic bundle loads without a DOM
+ok 54 - the classic bundle loads without a DOM
+  ---
+  duration_ms: 4.548299
+  type: 'test'
+  ...
+# Subtest: the classic bundle does not overwrite an existing global
+ok 55 - the classic bundle does not overwrite an existing global
+  ---
+  duration_ms: 0.639894
+  type: 'test'
+  ...
+# Subtest: there are no runtime dependencies
+ok 56 - there are no runtime dependencies
+  ---
+  duration_ms: 0.162715
+  type: 'test'
+  ...
+# Subtest: every package export points to an emitted file
+ok 57 - every package export points to an emitted file
+  ---
+  duration_ms: 2.605593
+  type: 'test'
+  ...
+# Subtest: browser code needs neither eval nor dynamically compiled functions
+ok 58 - browser code needs neither eval nor dynamically compiled functions
+  ---
+  duration_ms: 0.27921
+  type: 'test'
+  ...
+# Subtest: browser code contains no network or storage API calls
+ok 59 - browser code contains no network or storage API calls
+  ---
+  duration_ms: 0.478009
+  type: 'test'
+  ...
+# Subtest: preview serves the demo and the exact shipped script
+ok 60 - preview serves the demo and the exact shipped script
+  ---
+  duration_ms: 29.451072
+  type: 'test'
+  ...
+# Subtest: preview rejects writes
+ok 61 - preview rejects writes
+  ---
+  duration_ms: 1.73984
+  type: 'test'
+  ...
+# Subtest: preview does not expose package metadata or dependency directories
+ok 62 - preview does not expose package metadata or dependency directories
+  ---
+  duration_ms: 5.706492
+  type: 'test'
+  ...
+# Subtest: preview rejects traversal and malformed escapes
+ok 63 - preview rejects traversal and malformed escapes
+  ---
+  duration_ms: 4.069256
+  type: 'test'
+  ...
+# Subtest: preview uses no-store and restrictive script/connect directives
+ok 64 - preview uses no-store and restrictive script/connect directives
+  ---
+  duration_ms: 3.776236
+  type: 'test'
+  ...
+# Subtest: preview supports HEAD without a response body
+ok 65 - preview supports HEAD without a response body
+  ---
+  duration_ms: 3.393218
+  type: 'test'
+  ...
+1..65
+# tests 65
+# suites 0
+# pass 65
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 157.541831

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An interactive HoverBridge playground. Cross the gap, keep your submenu, and inspect the actual safe corridor.">
+  <meta name="color-scheme" content="light dark">
+  <title>HoverBridge · Keep the menu you meant to reach.</title>
+  <link rel="stylesheet" href="demo.css">
+  <script defer src="../dist/hoverbridge.browser.js"></script>
+  <script defer src="demo.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="index.html" aria-label="HoverBridge home"><span class="brand-mark" aria-hidden="true">↗</span>HoverBridge</a>
+    <div class="masthead-right"><span class="version">0.2.0-alpha.3</span><a href="../README.md">Documentation <span aria-hidden="true">↗</span></a></div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="headline">
+      <div><p class="eyebrow">POINTER INTENT, WITHOUT THE GUESSWORK</p><h1 id="headline">Keep the menu<br>you meant to <em>reach.</em></h1></div>
+      <div class="hero-aside"><p>A little room for human movement.</p><p>Cross the gap. Take the diagonal.<br>Your submenu should still be there.</p><div class="feature-line"><span>No runtime dependencies</span><span>No network calls</span></div></div>
+    </section>
+    <section class="playground" aria-label="Interactive pointer intent playground">
+      <div class="toolbar">
+        <div class="toolbar-left"><span class="playground-label">PLAYGROUND</span><button id="protection" class="toggle" type="button" aria-pressed="true"><span class="switch" aria-hidden="true"></span>Protection <span id="protection-label">on</span></button><button id="debug" class="quiet-button" type="button" aria-pressed="false">Show corridor</button></div>
+        <div class="toolbar-right"><label for="side">Opens</label><select id="side"><option value="right">Right</option><option value="left">Left</option><option value="bottom">Below</option><option value="top">Above</option></select><label for="gap">Gap</label><input id="gap" type="range" min="8" max="112" value="56"><output id="gap-value" for="gap">56 px</output><label for="buffer">Tolerance</label><input id="buffer" type="range" min="0" max="24" value="6"><output id="buffer-value" for="buffer">6 px</output></div>
+      </div>
+      <div id="stage" class="stage">
+        <div class="stage-caption"><span class="status-dot" aria-hidden="true"></span><span id="hint">Start on Components. Move diagonally toward its panel.</span></div>
+        <nav id="source" class="menu source-menu" data-hoverbridge aria-label="Insert">
+          <div class="menu-heading">INSERT INTO WORKSPACE <kbd>⌘ K</kbd></div>
+          <button id="components-trigger" type="button" class="menu-item" aria-controls="components" aria-expanded="false"><span class="item-icon" aria-hidden="true">⊞</span><span>Components</span><span class="chevron" aria-hidden="true">›</span></button>
+          <button id="type-trigger" type="button" class="menu-item" aria-controls="type-panel" aria-expanded="false"><span class="item-icon type-icon" aria-hidden="true">T</span><span>Typography</span><span class="chevron" aria-hidden="true">›</span></button>
+          <button id="color-trigger" type="button" class="menu-item" aria-controls="color-panel" aria-expanded="false"><span class="item-icon" aria-hidden="true">◒</span><span>Colors</span><span class="chevron" aria-hidden="true">›</span></button>
+          <div class="separator"></div>
+          <button id="new-folder" type="button" class="menu-item" data-hoverbridge-item data-demo-action="Folder created"><span class="item-icon" aria-hidden="true">＋</span><span>New folder</span><kbd>⇧ N</kbd></button>
+        </nav>
+        <section id="components" class="menu floating-panel" hidden aria-label="Components">
+          <div class="menu-heading">COMPONENTS <span class="small-count">12</span></div>
+          <div class="preview-strip" aria-hidden="true"><span class="mini-window"><i></i><b></b></span><span class="mini-window"><i></i><b></b></span><span class="mini-window"><i></i><b></b></span><span class="preview-label">Building blocks.<br>Not another framework.</span></div>
+          <nav data-hoverbridge id="component-tools" aria-label="Component groups">
+            <button id="layout-trigger" type="button" class="menu-item" aria-controls="layouts" aria-expanded="false"><span>Layout primitives</span><span class="chevron" aria-hidden="true">›</span></button>
+            <button type="button" class="menu-item" data-hoverbridge-item data-demo-action="Control selected"><span>Controls</span><kbd>06</kbd></button>
+            <button type="button" class="menu-item" data-hoverbridge-item data-demo-action="Navigation selected"><span>Navigation</span><kbd>04</kbd></button>
+          </nav>
+          <p class="menu-note">Try the nested panel, too.</p>
+        </section>
+        <section id="type-panel" class="menu floating-panel" hidden aria-label="Typography"><div class="menu-heading">TYPOGRAPHY</div><div class="type-sample">Aa<span>Good type.<br>Clear intent.</span></div><button class="menu-item" type="button" data-demo-action="Heading selected">Add a heading <kbd>H</kbd></button><button class="menu-item" type="button" data-demo-action="Text selected">Add body text <kbd>T</kbd></button></section>
+        <section id="color-panel" class="menu floating-panel" hidden aria-label="Colors"><div class="menu-heading">PALETTE</div><div class="swatches" aria-hidden="true"><span></span><span></span><span></span><span></span></div><button class="menu-item" type="button" data-demo-action="Palette applied">Apply palette <kbd>↵</kbd></button><p class="menu-note">Quiet colors. Obvious states.</p></section>
+        <section id="layouts" class="menu nested-panel" hidden aria-label="Layout primitives"><div class="menu-heading">LAYOUT PRIMITIVES</div><button type="button" class="menu-item" data-demo-action="Stack selected"><span class="item-icon" aria-hidden="true">☰</span>Stack<kbd>01</kbd></button><button type="button" class="menu-item" data-demo-action="Grid selected"><span class="item-icon" aria-hidden="true">⊞</span>Grid<kbd>02</kbd></button><button type="button" class="menu-item" data-demo-action="Container selected"><span class="item-icon" aria-hidden="true">□</span>Container<kbd>03</kbd></button><p class="menu-note">Portaled. Still connected.</p></section>
+        <div class="stage-bottom"><span>Hover to explore. Click to pin. <kbd>esc</kbd> to leave.</span><span id="state-label">Ready</span></div>
+      </div>
+      <div class="metrics" aria-label="Local session counters"><div><span id="switches">0</span><span>deferred sibling switches</span></div><div><span id="samples">0</span><span>protected samples</span></div><div><span id="opens">0</span><span>panel / item activations</span></div><button type="button" id="reset" class="quiet-button">Reset counters ↺</button></div>
+    </section>
+    <section class="integration" aria-labelledby="integration-title"><div><p class="eyebrow">SMALL SURFACE. CLEAR OWNERSHIP.</p><h2 id="integration-title">Your markup. Your styling.<br>One safer transition.</h2><p>Add <code>data-hoverbridge</code> to the scope.<br>Existing <code>aria-controls</code> connects the endpoints.</p></div><div class="code-example"><span class="code-label">SELF-HOSTED · NO BUILD NEEDED</span><pre><code>&lt;script defer src="/vendor/hoverbridge.browser.js"&gt;&lt;/script&gt;
+
+&lt;nav data-hoverbridge&gt;
+  &lt;button aria-controls="tools"&gt;Tools&lt;/button&gt;
+&lt;/nav&gt;
+&lt;section id="tools" hidden&gt;…&lt;/section&gt;</code></pre><p>Copy the included <code>dist/hoverbridge.browser.js</code> to your site.<br>Position and style the panels in your own CSS.</p></div></section>
+    <div id="toast" class="toast" role="status" hidden></div>
+  </main>
+  <footer><span>Built by <a href="https://angusu.de">angusu.de</a> · Angus Uelsmann</span><span>Local demo. No telemetry. <a href="../docs/limits.md">Honest boundaries ↗</a></span></footer>
+</body>
+</html>
