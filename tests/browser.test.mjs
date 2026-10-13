@@ -26,7 +26,9 @@ after(async () => { await browser?.close(); });
 async function fixture(options = {}, extra = '') {
   const page = await browser.newPage({ viewport: { width: 1100, height: 800 } });
   pages.add(page);
-  page.setDefaultTimeout(8000);
+  // Browser startup and the first document load can stall on hosted runners.
+  // Interaction deadlines below remain explicit where timing is the subject.
+  page.setDefaultTimeout(20000);
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.setContent(`<!doctype html><html><head><style>
@@ -41,7 +43,7 @@ async function fixture(options = {}, extra = '') {
   <nav id="root"><button id="a" aria-controls="pa" aria-expanded="false">A</button><button id="b" aria-controls="pb" aria-expanded="false">B</button><button id="leaf" data-hoverbridge-item>Leaf</button></nav>
   <section id="pa" class="panel" hidden><button id="inside">Inside A</button></section>
   <section id="pb" class="panel" hidden><button>Inside B</button></section>
-  <button id="outside">Outside</button>${extra}</body></html>`);
+  <button id="outside">Outside</button>${extra}</body></html>`, { waitUntil: 'domcontentloaded' });
   await page.addScriptTag({ path: bundle });
   await page.evaluate(options => {
     window.changes = [];
@@ -357,7 +359,21 @@ test('openDelay is cancelled when the trigger is only passed over', async () => 
 test('openDelay completes without requiring another pointer movement', async () => {
   const page = await fixture({ openDelay: 60 }); await page.mouse.move(150, 125);
   assert.ok(await page.evaluate(() => ctrl.metrics.pointerSamples) >= 1);
-  await page.waitForFunction(() => ctrl.active?.id === 'a');
+  try { await page.waitForFunction(() => ctrl.active?.id === 'a', null, { timeout: 3000 }); }
+  catch (error) {
+    const detail = await page.evaluate(() => ({
+      active: ctrl.active?.id ?? null,
+      pending: ctrl.pending?.trigger?.id ?? null,
+      pendingAt: ctrl.pendingAt,
+      timer: ctrl.timer,
+      now: performance.now(),
+      point: ctrl.hub.point,
+      path: ctrl.hub.path.map(element => element.id || element.tagName),
+      hit: document.elementFromPoint(150, 125)?.id ?? null,
+      metrics: ctrl.metrics,
+    }));
+    throw new Error(`openDelay did not activate: ${JSON.stringify(detail)}`, { cause: error });
+  }
 });
 test('closed, idle scopes perform zero layout reads', async () => {
   const page = await fixture(); await page.mouse.move(20, 20); await page.mouse.move(30, 30);
