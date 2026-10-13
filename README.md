@@ -145,11 +145,11 @@ It is not a universal patch for every framework's private state machine. It does
 
 The geometric core is portable. Native adapters are **not** shipped in this version.
 
-| Browser family | Local verification |
+| Browser family | Verification |
 | --- | --- |
 | Chrome and Edge | 61 interaction tests passed in each installed Windows browser. |
-| Firefox | 61 passed in Playwright Firefox. |
-| Safari's WebKit engine | 61 passed in Playwright WebKit on Windows; Safari on Apple hardware remains untested. |
+| Firefox | 61 passed locally and in the Windows, Linux and macOS CI mirror. |
+| WebKit | 61 passed locally and in the Windows, Linux and macOS CI mirror; the Safari application itself remains untested. |
 
 Physical pen/touch devices remain untested. [Browser matrix and boundaries](docs/testing.md).
 

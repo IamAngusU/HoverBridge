@@ -16,6 +16,8 @@ Local Windows verification, 13 October 2026. These results describe this source 
 
 The browser suite exercises diagonal crossings, four panel directions, deliberate sibling clicks, leave and rest timing, keyboard and Escape, touch emulation, pen hover events, nested and portaled panels, native popovers, Shadow DOM, dynamic bindings, teardown, the read-only guard, and live/per-scope tuning. The same 61 checks pass in each Playwright engine. Empty `pointerType` is accepted as an unclassified hovering pointer, as allowed by the [Pointer Events specification](https://www.w3.org/TR/pointerevents2/); touch and pen contact still do not activate hover intent.
 
+The public [CI mirror](https://github.com/angusu-de/HoverBridge-CI/actions/workflows/ci.yml) also runs the full Chromium, Firefox and WebKit suite on Windows, Linux and macOS. Its jobs compare their checked-out SHA with the source repository's `main` before testing. Check that the run SHA equals the release tag's commit when using a hosted result as release evidence. This verifies Playwright WebKit on macOS, not the installed Safari application or physical input hardware.
+
 [Unit log](evidence/unit-alpha3.log) · [Full engine-matrix log](evidence/browser-matrix-alpha3.log) · [Chrome log](evidence/chrome-alpha3.log) · [Edge log](evidence/edge-alpha3.log)
 
 ## Run the checks
@@ -44,6 +46,6 @@ On this Windows machine (Node 24.5.0, Intel Core i9-12900K), the median of 11 ba
 
 ## Demo evidence
 
-The included demo has local scripts and CSS only. The original multi-file demo and exported standalone HTML were opened through `file:` in Chromium on Windows and exercised with the same smoke interaction, including the live tolerance control. The preview server was checked separately over loopback HTTP in the earlier alpha.2 run. The README screenshot is a real Chromium render with corridor debugging enabled; the technical diagram is an explanatory schematic. Neither graphic represents a timing benchmark or user study.
+The included demo has local scripts and CSS only. The original multi-file demo and exported standalone HTML were opened through `file:` in Chromium on Windows and exercised with the same smoke interaction, including the live tolerance control. The preview server and screenshots were checked separately over loopback HTTP in alpha.3; [capture record](demo-check.json). The README screenshot is a real Chromium render with corridor debugging enabled; the technical diagram is an explanatory schematic. Neither graphic represents a timing benchmark or user study.
 
 Physical pen and touch hardware, Safari on Apple hardware, assistive technology, and arbitrary third-party component libraries were not tested. A framework that owns its own menu state must consult the guard's `shouldHold()` or `onChange`; the guard does not change host state. The original [0.1.0-alpha.1 record](testing-alpha1.md) remains for historical comparison.

@@ -143,11 +143,11 @@ HoverBridge ist kein automatischer Patch für beliebige Radix-, React- oder ande
 
 Der Geometrie-Kern lässt sich in andere Laufzeiten übertragen. Fertige native Adapter sind in dieser Version nicht enthalten.
 
-| Browserfamilie | Lokale Prüfung |
+| Browserfamilie | Prüfung |
 | --- | --- |
 | Chrome und Edge | Je 61 Interaktionstests im installierten Windows-Browser bestanden. |
-| Firefox | 61 Tests in Playwright Firefox bestanden. |
-| Safaris WebKit-Engine | 61 Tests in Playwright WebKit unter Windows bestanden; Safari auf Apple-Hardware ist noch ungetestet. |
+| Firefox | 61 Tests lokal sowie im CI-Spiegel unter Windows, Linux und macOS bestanden. |
+| WebKit | 61 Tests lokal sowie im CI-Spiegel unter Windows, Linux und macOS bestanden; die Safari-Anwendung selbst ist noch ungetestet. |
 
 Physische Stift- und Touch-Geräte sind ebenfalls noch ungetestet. [Browsermatrix und Grenzen](docs/testing.md).
 
