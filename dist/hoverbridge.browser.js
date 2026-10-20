@@ -1,4 +1,4 @@
-/*! HoverBridge v0.2.0-alpha.3 | MIT | Angus Uelsmann | angusu.de */
+/*! HoverBridge v0.2.0-alpha.4 | MIT | Angus Uelsmann | angusu.de */
 (function(global){'use strict';
 const modules={"auto.js":function(module,exports,require){
 "use strict";
