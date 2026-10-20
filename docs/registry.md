@@ -7,6 +7,11 @@ Alpha releases use the `alpha` dist-tag. Pin a version for reproducible installs
 npm install @iamangusu/hoverbridge@0.2.0-alpha.4
 ```
 
+The registry currently also points `latest` at this prerelease. A freshly
+authenticated removal, including a security-key confirmation, was rejected by
+the npm registry with HTTP 400 on 2026-10-20. The version remains an alpha;
+use the explicit version above rather than treating `latest` as a stability claim.
+
 For a release, test and commit the source, wait for the matching public CI run,
 and run `npm run release:bundle` from the clean tagged checkout. Publish that
 exact tarball with `--access public --tag alpha`, check the registry's SHA-512
