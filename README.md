@@ -103,7 +103,7 @@ The counters are local to this page: samples protected, sibling switches deferre
 
 ## More control, same core
 
-For applications with a build step, install the pinned [release archive](docs/install.md#application-with-a-build-step), then import the side-effect-free entry:
+For applications with a build step, install the pinned [npm version](docs/install.md#application-with-a-build-step), then import the side-effect-free entry:
 
 ```ts
 import { createHoverBridge } from '@iamangusu/hoverbridge';

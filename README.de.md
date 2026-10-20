@@ -101,7 +101,7 @@ Die Zähler zeigen tatsächliche lokale Aktivität. Sie erfinden keine Anzahl �
 
 ## In bestehende Anwendungen integrieren
 
-Nach Installation des gepinnten [Release-Archivs](docs/install.md#application-with-a-build-step):
+Nach Installation der festen [npm-Version](docs/install.md#application-with-a-build-step):
 
 ```ts
 import { createHoverBridge } from '@iamangusu/hoverbridge';

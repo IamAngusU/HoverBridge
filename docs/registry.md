@@ -13,6 +13,25 @@ exact tarball with `--access public --tag alpha`, check the registry's SHA-512
 integrity against it, and install in a fresh consumer project. GitHub assets
 retain the browser script, npm archive, source ZIP and SHA-256 checksums.
 
+## Verified first release
+
+`0.2.0-alpha.4` was published on 2026-10-20. The public registry tarball matches
+the archive in the [GitHub release](https://github.com/IamAngusU/HoverBridge/releases/tag/v0.2.0-alpha.4)
+and has this SHA-512 integrity:
+
+```text
+sha512-zE1C4S3bCpKGvhs6sAvyQSWC8kMYKJefm4Hx6cOps/KM9C4cPYLH2iU/kL5LOTcvZQIoiV6VjcN2bnEYz+t99Q==
+```
+
+A fresh registry installation passed ESM imports for the main, core, guard and
+auto entries, SSR-safe auto initialization, a diagonal pointer trajectory and
+strict TypeScript consumer compilation. The [release CI run](https://github.com/angusu-de/HoverBridge-CI/actions/runs/39367838573)
+passed at source commit `efc3946d9819fe26d8c802b700a8af23621c4a6a`.
+Both public playground URLs serve the exact standalone release HTML; hosted
+hover behavior and protection, debug and tolerance controls were smoke-tested.
+
+## Credentials
+
 Authentication belongs in a process-scoped environment and an npm config that
 references the environment variable. Never commit a token. For future OIDC
 publishing, configure the actual workflow repository in npm after its runner
