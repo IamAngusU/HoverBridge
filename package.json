@@ -1,6 +1,6 @@
 {
   "name": "@iamangusu/hoverbridge",
-  "version": "0.2.0-alpha.3",
+  "version": "0.2.0-alpha.4",
   "description": "Keep the menu you meant to reach. Framework-independent pointer intent and safe hover corridors.",
   "type": "module",
   "license": "MIT",

@@ -6,7 +6,7 @@
 <p align="center"><a href="README.md"><img src="docs/assets/readme-language-en.svg" height="40" alt="Read this README in English"></a></p>
 
 <p align="center">
-  <a href="https://github.com/IamAngusU/HoverBridge/releases/tag/v0.2.0-alpha.3"><img src="docs/assets/readme/repo-release.svg" height="40" alt="Preview 0.2.0-alpha.3"></a>
+  <a href="https://github.com/IamAngusU/HoverBridge/releases/tag/v0.2.0-alpha.4"><img src="docs/assets/readme/repo-release.svg" height="40" alt="Preview 0.2.0-alpha.4"></a>
   <a href="docs/install.md"><img src="docs/assets/readme/repo-runtime.svg" height="40" alt="Browser and TypeScript"></a>
   <a href="LICENSE"><img src="docs/assets/readme/repo-license.svg" height="40" alt="MIT license"></a>
 </p>
@@ -26,7 +26,7 @@ HoverBridge hält das aktive Panel offen, während sich der Pointer in seine Ric
 ## Schnellstart
 
 ```sh
-npm install https://github.com/IamAngusU/HoverBridge/releases/download/v0.2.0-alpha.3/iamangusu-hoverbridge-0.2.0-alpha.3.tgz
+npm install @iamangusu/hoverbridge@0.2.0-alpha.4
 ```
 ```js
 import { createHoverBridge } from '@iamangusu/hoverbridge';
@@ -34,11 +34,11 @@ const menu = document.querySelector('[data-hoverbridge]');
 if (menu) createHoverBridge(menu);
 ```
 
-Die versionierte Release-Datei funktioniert heute; npm-Veröffentlichung folgt nach Kontoeinrichtung. Ohne Build-Schritt: die Browser-Datei unten verwenden.
+Installiere oben die feste npm-Version. Ohne Build-Schritt kannst du die Browser-Datei unten verwenden.
 
 ## Einmal einbinden
 
-Lade **[die versionierte Browser-Datei](https://github.com/IamAngusU/HoverBridge/releases/download/v0.2.0-alpha.3/hoverbridge.browser.js)** in die statischen Dateien deiner Website:
+Lade **[die versionierte Browser-Datei](https://github.com/IamAngusU/HoverBridge/releases/download/v0.2.0-alpha.4/hoverbridge.browser.js)** in die statischen Dateien deiner Website:
 
 ```html
 <script defer src="/vendor/hoverbridge.browser.js"></script>
@@ -80,7 +80,7 @@ Die Standardwerte funktionieren ohne Konfiguration. Bei Bedarf stellst du nur di
 Ein unbedingtes CSS-`:hover` bleibt unter dem tatsächlichen Pointer aktiv. JavaScript kann diese Pseudoklasse nicht wegzaubern. Deshalb liefert HoverBridge Zustandsattribute, statt deine Styles oder fremde Event-Handler stillschweigend zu überschreiben. [Integration in bestehende Komponenten](docs/integration.md).
 
 > [!NOTE]
-> **0.2.0-alpha.3** ist ein GitHub-Prerelease mit versionierten Dateien und Prüfsummen. Das Paket liegt noch nicht in der npm-Registry; für Anwendungen mit Build-Schritt gibt es das [Release-Archiv](docs/install.md#application-with-a-build-step).
+> **0.2.0-alpha.4** ist eine Alpha-Version auf [npm](https://www.npmjs.com/package/@iamangusu/hoverbridge) und GitHub. Das GitHub-Release enthält zusätzlich die Browser-Datei, das Offline-Demo und Prüfsummen.
 
 ## Ausprobieren
 

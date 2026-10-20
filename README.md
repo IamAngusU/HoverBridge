@@ -6,7 +6,7 @@
 <p align="center"><a href="README.de.md"><img src="docs/assets/readme-language-de.svg" height="40" alt="Diese README auf Deutsch lesen"></a></p>
 
 <p align="center">
-  <a href="https://github.com/IamAngusU/HoverBridge/releases/tag/v0.2.0-alpha.3"><img src="docs/assets/readme/repo-release.svg" height="40" alt="Preview 0.2.0-alpha.3"></a>
+  <a href="https://github.com/IamAngusU/HoverBridge/releases/tag/v0.2.0-alpha.4"><img src="docs/assets/readme/repo-release.svg" height="40" alt="Preview 0.2.0-alpha.4"></a>
   <a href="docs/install.md"><img src="docs/assets/readme/repo-runtime.svg" height="40" alt="Browser and TypeScript"></a>
   <a href="LICENSE"><img src="docs/assets/readme/repo-license.svg" height="40" alt="MIT license"></a>
 </p>
@@ -26,7 +26,7 @@ A submenu should not be an obstacle course. HoverBridge keeps the active panel o
 ## Quick start
 
 ```sh
-npm install https://github.com/IamAngusU/HoverBridge/releases/download/v0.2.0-alpha.3/iamangusu-hoverbridge-0.2.0-alpha.3.tgz
+npm install @iamangusu/hoverbridge@0.2.0-alpha.4
 ```
 ```js
 import { createHoverBridge } from '@iamangusu/hoverbridge';
@@ -34,11 +34,11 @@ const menu = document.querySelector('[data-hoverbridge]');
 if (menu) createHoverBridge(menu);
 ```
 
-The versioned release archive works today; registry publication is pending account setup. Without a build step, use the browser file below.
+Install the pinned npm version above. Without a build step, use the browser file below.
 
 ## Paste once
 
-Download **[the versioned browser file](https://github.com/IamAngusU/HoverBridge/releases/download/v0.2.0-alpha.3/hoverbridge.browser.js)** into your site's static assets, then load it:
+Download **[the versioned browser file](https://github.com/IamAngusU/HoverBridge/releases/download/v0.2.0-alpha.4/hoverbridge.browser.js)** into your site's static assets, then load it:
 
 ```html
 <script defer src="/vendor/hoverbridge.browser.js"></script>
@@ -79,7 +79,7 @@ The defaults work without configuration. When a menu needs tuning, add only the 
 The second rule is optional. Unconditional CSS `:hover` still matches the element physically under the pointer; JavaScript cannot cancel that pseudo-class. HoverBridge prevents its own state switches and supplies markers for your styles. It does not silently override somebody else's hover handlers. [Existing components and CSS](docs/integration.md).
 
 > [!NOTE]
-> **0.2.0-alpha.3** is a GitHub prerelease with versioned, checksummed assets. It is not published to the npm registry; use the [release archive](docs/install.md#application-with-a-build-step) for a build-step application.
+> **0.2.0-alpha.4** is an alpha release on [npm](https://www.npmjs.com/package/@iamangusu/hoverbridge) and GitHub. The GitHub release also includes the browser file, offline demo and checksums.
 
 ## Try it
 

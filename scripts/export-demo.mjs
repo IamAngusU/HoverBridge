@@ -13,7 +13,7 @@ html=html.replace('<link rel="stylesheet" href="demo.css">',`<style>\n${css}\n</
   .replace('href="index.html"','href="#"')
   .replace('href="../README.md">Documentation','href="#integration-title">Integration')
   .replace('href="../docs/limits.md"','href="#standalone-note"')
-  .replace('</main>',`<details id="standalone-note" style="margin:0 0 30px;color:var(--muted);font-size:12px"><summary>Integration boundaries</summary><p>Near-zero setup applies to explicitly owned scopes with known trigger/panel relationships. Use the supplied state attributes for CSS highlights. This does not override arbitrary framework state, implement a complete ARIA menu, or manage native OS menus. Full source, API, limits and test evidence are in the repository archive. This is ${version}, not a published npm release.</p></details></main>`)
+  .replace('</main>',`<details id="standalone-note" style="margin:0 0 30px;color:var(--muted);font-size:12px"><summary>Integration boundaries</summary><p>Near-zero setup applies to explicitly owned scopes with known trigger/panel relationships. Use the supplied state attributes for CSS highlights. This does not override arbitrary framework state, implement a complete ARIA menu, or manage native OS menus. Full source, API, limits and test evidence are in the repository archive. This is ${version}. The npm package and versioned release assets are linked from the repository.</p></details></main>`)
   .replace('</body>',`<script>\n${library}\n${demo}\n</script>\n</body>`);
 const output=process.argv[2]?resolve(process.argv[2]):fileURLToPath(new URL(`hoverbridge-playground-v${version}.html`,root));
 await writeFile(output,html);

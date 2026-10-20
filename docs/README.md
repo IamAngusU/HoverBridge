@@ -12,4 +12,4 @@ Start with the [README](../README.md), then choose the integration surface your 
 | [Testing](testing.md) | Actual executions, environment, sizes and benchmark methodology. |
 | [Deployment](deployment.md) | Static asset installation, npm archive and repository publishing. |
 
-Current behavior documented here targets **0.2.0-alpha.3**. Historical evidence files retain their original version labels. The badge shows the public CI mirror's status; compare its commit SHA with the source repository. This prerelease is not on the npm registry.
+Current behavior documented here targets **0.2.0-alpha.4**. Historical evidence files retain their original version labels. The badge shows the public CI mirror's status; compare its commit SHA with the source repository. Install the pinned npm release or the equivalent GitHub archive.

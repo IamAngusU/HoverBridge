@@ -1,13 +1,13 @@
 # Install HoverBridge
 
-HoverBridge is self-hosted. The browser build is one JavaScript file with no runtime dependencies, account, CDN, background service or package manager on the visitor's device. This prerelease is distributed from its [versioned GitHub release](https://github.com/IamAngusU/HoverBridge/releases), not the npm registry.
+HoverBridge is self-hosted. The browser build is one JavaScript file with no runtime dependencies, account, CDN, background service or package manager on the visitor's device. This alpha is available from [npm](https://www.npmjs.com/package/@iamangusu/hoverbridge) and its [versioned GitHub release](https://github.com/IamAngusU/HoverBridge/releases).
 
 ## Plain HTML, PHP or a static site
 
-Download the exact [browser script for v0.2.0-alpha.3](https://github.com/IamAngusU/HoverBridge/releases/download/v0.2.0-alpha.3/hoverbridge.browser.js) and save it as `public/vendor/hoverbridge.browser.js`. If you already use GitHub CLI, one command does that:
+Download the exact [browser script for v0.2.0-alpha.4](https://github.com/IamAngusU/HoverBridge/releases/download/v0.2.0-alpha.4/hoverbridge.browser.js) and save it as `public/vendor/hoverbridge.browser.js`. If you already use GitHub CLI, one command does that:
 
 ```sh
-gh release download v0.2.0-alpha.3 --repo IamAngusU/HoverBridge --pattern hoverbridge.browser.js --dir public/vendor
+gh release download v0.2.0-alpha.4 --repo IamAngusU/HoverBridge --pattern hoverbridge.browser.js --dir public/vendor
 ```
 
 Serve the file from your own site and mark only the menu you want it to manage:
@@ -27,10 +27,10 @@ You can verify the downloaded script against the release's `hoverbridge.browser.
 
 ## Application with a build step
 
-Install the pinned release archive, then import the managed controller or the read-only guard:
+Install the pinned npm version, then import the managed controller or the read-only guard:
 
 ```sh
-npm install https://github.com/IamAngusU/HoverBridge/releases/download/v0.2.0-alpha.3/iamangusu-hoverbridge-0.2.0-alpha.3.tgz
+npm install @iamangusu/hoverbridge@0.2.0-alpha.4
 ```
 
 ```ts
@@ -41,7 +41,7 @@ const bridge = createHoverBridge(menuElement);
 bridge.destroy();
 ```
 
-The archive contains ESM and TypeScript declarations. It is not an npm registry publication; `npm install @iamangusu/hoverbridge` does not refer to this release. For a source-based dependency you can pin the same tag with `npm install github:IamAngusU/HoverBridge#v0.2.0-alpha.3`. That route requires Git.
+The package contains ESM and TypeScript declarations. Alpha releases use the `alpha` dist-tag: `npm install @iamangusu/hoverbridge@alpha` follows that channel. Use the exact version above in reproducible builds. The same tarball is attached to the GitHub release. For a source-based dependency you can pin the same tag with `npm install github:IamAngusU/HoverBridge#v0.2.0-alpha.4`. That route requires Git.
 
 ## Update or remove
 

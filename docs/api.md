@@ -1,4 +1,4 @@
-# API · 0.2.0-alpha.3
+# API · 0.2.0-alpha.4
 
 ## Entry points
 
@@ -10,7 +10,7 @@
 | `@iamangusu/hoverbridge/auto` | `start()`, plus automatic document registration at DOM readiness. No-op in SSR. |
 | `dist/hoverbridge.browser.js` | Self-contained classic script. Adds `globalThis.HoverBridge`, starts explicit-scope discovery. Does not replace an existing global of that name. |
 
-The package is not published to the npm registry. Install the pinned [GitHub release archive](install.md#application-with-a-build-step) or a local folder. ESM and TypeScript declarations are shipped; CommonJS `require()` is not a supported package entry.
+Install the pinned [npm package](install.md#application-with-a-build-step), a GitHub release archive or a local folder. ESM and TypeScript declarations are shipped; CommonJS `require()` is not a supported package entry.
 
 ## `createHoverBridge(root, options?)`
 

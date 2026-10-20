@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0-alpha.4
+
+- Added the first public npm distribution under `@iamangusu/hoverbridge`, using the `alpha` channel and pinned installation examples.
+- Kept browser, guard, core and auto ESM exports with their TypeScript declarations; runtime behavior is unchanged from alpha.3.
+- Included the bilingual showcase, real pointer comparison, local badges and self-hostable playground in the checked distribution.
+
 ## 0.2.0-alpha.3
 
 - Published a versioned, self-hostable GitHub prerelease with a browser script, standalone playground, npm archive, source ZIP and SHA-256 manifest.

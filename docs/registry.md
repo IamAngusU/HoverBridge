@@ -1,21 +1,21 @@
 # npm publication
 
-The package is not on npm yet. Use the checked release archive until this page
-and the installation guide link to an actual registry release.
-
-Create an npm account with two-factor authentication and ownership of the
-`@iamangusu` user/organization scope. The first release can be published from
-the reviewed checkout after `npm ci`, `npm run check` and `npm pack --dry-run`:
+The public package is `@iamangusu/hoverbridge`, owned by npm user `iamangusu`.
+Alpha releases use the `alpha` dist-tag. Pin a version for reproducible installs:
 
 ```sh
-npm login
-npm publish --access public --tag alpha
+npm install @iamangusu/hoverbridge@0.2.0-alpha.4
 ```
 
-Keep the alpha dist-tag; do not make this prerelease `latest`. Inspect the
-pack output and verify the published tarball before changing README commands.
-For subsequent automation, configure npm Trusted Publishing for the actual
-runner repository and exact workflow filename. A CI mirror is not implicitly
-authorized to publish the canonical package.
+For a release, test and commit the source, wait for the matching public CI run,
+and run `npm run release:bundle` from the clean tagged checkout. Publish that
+exact tarball with `--access public --tag alpha`, check the registry's SHA-512
+integrity against it, and install in a fresh consumer project. GitHub assets
+retain the browser script, npm archive, source ZIP and SHA-256 checksums.
+
+Authentication belongs in a process-scoped environment and an npm config that
+references the environment variable. Never commit a token. For future OIDC
+publishing, configure the actual workflow repository in npm after its runner
+can start; the CI mirror is not automatically authorized to publish.
 
 [npm Trusted Publishing](https://docs.npmjs.com/trusted-publishers/).
