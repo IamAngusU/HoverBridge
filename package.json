@@ -63,7 +63,8 @@
     "prepack": "npm run build && npm test",
     "demo:capture": "node scripts/capture-demo.mjs",
     "demo:export": "node scripts/export-demo.mjs",
-    "demo:smoke": "node scripts/smoke-demo.mjs"
+    "demo:smoke": "node scripts/smoke-demo.mjs",
+    "demo:record": "node scripts/capture-comparison.mjs"
   },
   "devDependencies": {
     "typescript": "5.8.3",

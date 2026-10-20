@@ -49,3 +49,11 @@ On this Windows machine (Node 24.5.0, Intel Core i9-12900K), the median of 11 ba
 The included demo has local scripts and CSS only. The original multi-file demo and exported standalone HTML were opened through `file:` in Chromium on Windows and exercised with the same smoke interaction, including the live tolerance control. The preview server and screenshots were checked separately over loopback HTTP in alpha.3; [capture record](demo-check.json). The README screenshot is a real Chromium render with corridor debugging enabled; the technical diagram is an explanatory schematic. Neither graphic represents a timing benchmark or user study.
 
 Physical pen and touch hardware, Safari on Apple hardware, assistive technology, and arbitrary third-party component libraries were not tested. A framework that owns its own menu state must consult the guard's `shouldHold()` or `onChange`; the guard does not change host state. The original [0.1.0-alpha.1 record](testing-alpha1.md) remains for historical comparison.
+
+## Ten-second comparison
+
+`npm run demo:record` uses Playwright Chromium and ffmpeg on PATH to record the
+included playground twice with the same pointer path, first unprotected and
+then protected. It asserts the active item in both phases before exporting the
+GIF. The small blue dot marks actual pointer events. The GIF is a cropped,
+15-fps browser recording, not a user study or a time-saved measurement.

@@ -3,22 +3,38 @@
 <h1 align="center">Das Untermenü, das du erreichen wolltest.<br>Bleibt erreichbar.</h1>
 <p align="center">Über die Lücke. Quer durch die Liste.<br>Ohne versehentlich das nächste Menü zu öffnen.</p>
 
+<p align="center"><a href="README.md"><img src="docs/assets/readme-language-en.svg" height="40" alt="Read this README in English"></a></p>
+
 <p align="center">
-  <a href="https://github.com/IamAngusU/HoverBridge/releases/download/v0.2.0-alpha.3/hoverbridge.browser.js"><img src="docs/assets/badge-browser.svg" height="36" alt="Ein Browser-Script herunterladen"></a>
-  <img src="docs/assets/badge-dependencies.svg" height="36" alt="Keine Laufzeit-Abhängigkeiten">
-  <a href="https://github.com/IamAngusU/HoverBridge/releases/tag/v0.2.0-alpha.3"><img src="docs/assets/badge-alpha.svg" height="36" alt="Release 0.2.0-alpha.3"></a>
-  <a href="LICENSE"><img src="docs/assets/badge-license.svg" height="36" alt="MIT"></a>
-  <a href="https://github.com/angusu-de/HoverBridge-CI/actions/workflows/ci.yml"><img src="https://github.com/angusu-de/HoverBridge-CI/actions/workflows/ci.yml/badge.svg?branch=main&amp;event=push" height="36" alt="Live-Status des CI-Spiegels"></a>
+  <a href="https://github.com/IamAngusU/HoverBridge/releases/tag/v0.2.0-alpha.3"><img src="docs/assets/readme/repo-release.svg" height="40" alt="Preview 0.2.0-alpha.3"></a>
+  <a href="docs/install.md"><img src="docs/assets/readme/repo-runtime.svg" height="40" alt="Browser and TypeScript"></a>
+  <a href="LICENSE"><img src="docs/assets/readme/repo-license.svg" height="40" alt="MIT license"></a>
 </p>
-<p align="center"><a href="#einmal-einbinden">Start</a> · <a href="#ausprobieren">Playground</a> · <a href="docs/api.md">API</a> · <a href="docs/testing.md">Messwerte</a> · <a href="README.md">English</a></p>
+
+<p align="center"><a href="#schnellstart">Start</a> · <a href="#ausprobieren">Playground</a> · <a href="docs/api.md">API</a> · <a href="docs/testing.md">Messwerte</a> · <a href="README.md">English</a></p>
 
 HoverBridge hält das aktive Panel offen, während sich der Pointer in seine Richtung bewegt. Auch dann, wenn der Weg über andere Listeneinträge oder einen leeren Abstand führt. Ein bewusster Richtungswechsel, Verweilen über einem anderen Eintrag oder ein Klick gibt die Auswahl wieder frei.
 
 **Kein unsichtbares Overlay, das Klicks abfängt. Kein globales `pointer-events: none`. Kein neues Menü-Framework.**
 
-<img src="docs/assets/how-it-works.svg" width="1280" alt="Technisches Diagramm: Der Pointer kreuzt Typography auf dem Weg zum Components-Panel; Components bleibt ausgewählt.">
+**Für bestehende Websites und eigene Menü-Komponenten.** [Live ausprobieren](https://angusu.de/hoverbridge/index.html) · [Installation](docs/install.md)
 
-<sub>Schematische Darstellung im Stil der Bloom-Grafiken. Der Weg ist ein Beispiel, keine Messung echter Nutzer.</sub>
+![HoverBridge off and on, with the same pointer path](docs/assets/hoverbridge-comparison.gif)
+
+<sub>Zehn Sekunden, derselbe skriptgesteuerte Pointer-Weg: Schutz aus, dann an. Echte Browseraufnahme des mitgelieferten Playgrounds; kein Nutzertest.</sub>
+
+## Schnellstart
+
+```sh
+npm install https://github.com/IamAngusU/HoverBridge/releases/download/v0.2.0-alpha.3/iamangusu-hoverbridge-0.2.0-alpha.3.tgz
+```
+```js
+import { createHoverBridge } from '@iamangusu/hoverbridge';
+const menu = document.querySelector('[data-hoverbridge]');
+if (menu) createHoverBridge(menu);
+```
+
+Die versionierte Release-Datei funktioniert heute; npm-Veröffentlichung folgt nach Kontoeinrichtung. Ohne Build-Schritt: die Browser-Datei unten verwenden.
 
 ## Einmal einbinden
 
@@ -123,7 +139,7 @@ guard.destroy();
 
 Für Maintainer schreibt `npm run metrics` Bundle-Größe und einen Microbenchmark des DOM-freien Kerns nach `docs/evidence/`. Die CI lädt diese Dateien pro Linux-Lauf als Artefakt hoch. Browser-Layout und Rendering sind in diesen Zeiten nicht enthalten. [Messbereich](docs/testing.md#size-and-core-benchmark).
 
-**Gehostete CI:** Der öffentliche [CI-Spiegel](https://github.com/angusu-de/HoverBridge-CI) prüft denselben Commit unter Windows, Linux und macOS. Auf dem IamAngusU-Account startet GitHub die Jobs derzeit wegen einer Abrechnungssperre nicht. Das Badge zeigt `main` des Spiegels; bei neuen Commits muss dessen SHA mit `main` dieses Repositories verglichen werden. [Workflow und Herkunft](docs/deployment.md#ci-and-evidence).
+[Build-Nachweise und Herkunft](docs/deployment.md#ci-and-evidence).
 
 ## Verhalten
 
@@ -151,6 +167,12 @@ Der Geometrie-Kern lässt sich in andere Laufzeiten übertragen. Fertige native 
 
 Physische Stift- und Touch-Geräte sind ebenfalls noch ungetestet. [Browsermatrix und Grenzen](docs/testing.md).
 
+## Warum nicht Floating UI oder Radix?
+
+[Floating UI](https://floating-ui.com/docs/usehover#safepolygon) bietet bereits `safePolygon()` und Positionierung. Wer es nutzt, sollte zuerst dessen Hover-Verhalten verwenden. [Radix](https://www.radix-ui.com/primitives/docs/components/dropdown-menu) liefert komplette React-Komponenten mit eigener Zustands- und Tastaturlogik.
+
+HoverBridge passt zu bestehendem HTML, anderen Frameworks oder einer eigenen Menülogik, wenn nur Pointer-Absicht und Übergänge fehlen. Der Guard-Einstieg lässt die Zustandskontrolle bei deiner Komponente. Es ist kein Ersatz für Positionierung oder ein vollständiges barrierefreies Menü; zwei konkurrierende Zustandscontroller dürfen nicht dieselbe Sichtbarkeit steuern.
+
 ## Projektbefehle
 
 ```sh
@@ -166,3 +188,5 @@ Für die Script-Einbindung auf deiner Website brauchst du keinen dieser Befehle.
 [Messwerte und Tests](docs/testing.md) · [Architektur](docs/architecture.md) · [Deployment](docs/deployment.md) · [Mitarbeiten](CONTRIBUTING.md) · [Sicherheit](SECURITY.md)
 
 <p align="center"><sub>Powered by <a href="https://angusu.de">angusu.de</a> · Angus Uelsmann · <a href="LICENSE">MIT</a></sub></p>
+
+<p align="center"><a href="https://github.com/IamAngusU/icon-marquee"><img src="docs/assets/stack-marquee.svg" width="760" alt="TypeScript, JavaScript, HTML, CSS and Node.js"></a></p>
