@@ -51,6 +51,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "test": "node --test tests/core.test.mjs tests/package.test.mjs tests/server.test.mjs",
+    "package:smoke": "node scripts/check-package.mjs",
     "test:browser": "node --test tests/browser.test.mjs",
     "test:browsers": "node scripts/test-browsers.mjs",
     "browsers:install": "node node_modules/playwright-core/cli.js install chromium firefox webkit",

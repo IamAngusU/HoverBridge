@@ -13,6 +13,11 @@ exact tarball with `--access public --tag alpha`, check the registry's SHA-512
 integrity against it, and install in a fresh consumer project. GitHub assets
 retain the browser script, npm archive, source ZIP and SHA-256 checksums.
 
+`npm run package:smoke` tests a newly packed archive offline before publication.
+Pass an existing archive as `npm run package:smoke -- /path/to/package.tgz` to
+test those exact bytes instead. The command requires a build and development
+dependencies in the checkout; its consumer uses only the installed archive.
+
 ## Verified first release
 
 `0.2.0-alpha.4` was published on 2026-10-20. The public registry tarball matches

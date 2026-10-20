@@ -39,7 +39,7 @@ jobs:
       - run: npm run demo:export
       - run: npm run demo:smoke
       - run: npm run demo:smoke -- --exported
-      - run: npm pack --dry-run
+      - run: npm run package:smoke
       - name: Measure package size and core throughput
         if: runner.os == 'Linux'
         run: npm run metrics
@@ -70,4 +70,4 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm test
-      - run: npm pack --dry-run
+      - run: npm run package:smoke

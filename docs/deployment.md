@@ -15,6 +15,13 @@ The browser file needs no backend process, database migration, runtime dependenc
 
 The workflow uses read-only repository permission, pinned official actions and no publication secret. It does not automatically publish to npm or create a release.
 
+Every CI job also runs `npm run package:smoke`. It packs the built files, installs
+the archive offline in a fresh consumer directory with lifecycle scripts disabled,
+and checks every export target, ESM imports, SSR-safe auto initialization, the
+classic browser bundle, a diagonal pointer trajectory and strict TypeScript
+consumer compilation. This catches missing packaged files that source-tree tests
+cannot catch. Release bundling repeats the check against the exact output tarball.
+
 ## Make a release
 
 1. Run `npm ci`, `npm run browsers:install`, `npm run check`, `npm run metrics` and `npm run demo:capture` locally.

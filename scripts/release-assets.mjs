@@ -47,6 +47,7 @@ await copyFile(resolve(root, 'dist', script), resolve(out, script));
 run(process.execPath, [npmCli, 'run', 'demo:export', '--', resolve(out, html)]);
 run(process.execPath, [npmCli, 'run', 'demo:smoke', '--', resolve(out, html)]);
 run(process.execPath, [npmCli, 'pack', '--pack-destination', out]);
+run(process.execPath, [npmCli, 'run', 'package:smoke', '--', resolve(out, tarball)]);
 run('git', ['archive', '--format=zip', '--prefix=HoverBridge/', '-o', resolve(out, archive), 'HEAD']);
 requireClean();
 
